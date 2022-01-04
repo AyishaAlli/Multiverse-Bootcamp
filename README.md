@@ -1,1 +1,1 @@
-# Multiverse-Bootcamp
+# Multiverse Bootcamp
