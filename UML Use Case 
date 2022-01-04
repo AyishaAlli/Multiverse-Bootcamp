@@ -1,3 +1,6 @@
+For Diverloo App
+Created on https://planttext.com/
+
 @startuml
 
 title Directions - Use Case Diagram
@@ -7,22 +10,20 @@ actor Restaraunt
 actor DeliveryDriver
 
 rectangle System {
-  usecase (Create Account)
-  usecase (View Address Details)
-  usecase (Search Restaraunts)
-  usecase (Select Restaraunt)
-  usecase (Send Updates)
-  usecase (Add Menu Items)
-  usecase (Restaruant Details)
-  usecase (Remove Menu Items)
-  usecase (View Order)
+usecase (Create Account)
+usecase (View Address Details)
+usecase (Search Restaraunts)
+usecase (Select Restaraunt)
+usecase (Send Updates)
+usecase (Add Menu Items)
+usecase (Restaruant Details)
+usecase (Remove Menu Items)
+usecase (View Order)
 
 }
 
 Customer -> (Create Account)
 Customer -> (Search Restaraunts)
 Customer -> (Select Restaraunt)
-
-
 
 @enduml
