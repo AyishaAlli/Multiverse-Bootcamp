@@ -3,7 +3,7 @@ const Passenger = require('./Passenger')
 class Plane {
     //Property
     type;
-    passengers
+    passengers;
 
   constructor (type){
       this.type = type;
