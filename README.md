@@ -2,7 +2,7 @@
 
 All work completed on my 5-week Multiverse bootcamp can be found in this repo
 
-### UML Folder [https://github.com/AyishaAlli/Multiverse-Bootcamp/tree/main/UML]
+### UML Folder 
 
 Contains initial Diafram text and screenshot images of diagrams
 
