@@ -20,6 +20,9 @@ addBag(bag){
 }
 
 }
+
+module.exports = Passenger
+
 const lisa = new Passenger('Lisa','234986', '23A');
 const lisaHandLuggage = new Bag(8);
 const lisaLargeLuggage = new Bag(22);
