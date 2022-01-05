@@ -1,3 +1,3 @@
-class airpot {
-    
+class airport {
+
 }
