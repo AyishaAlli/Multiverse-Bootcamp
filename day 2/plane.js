@@ -1,4 +1,4 @@
-class plane {
+class Plane {
     //Property
     passengers;
   constructor (noOfPassengers){
