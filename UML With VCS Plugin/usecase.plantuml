@@ -1,0 +1,35 @@
+
+@startuml Deliveroo
+
+title Deliveroo App - Use Case Diagram
+
+actor Customer
+actor Restaraunt
+actor DeliveryDriver
+
+rectangle System {
+  usecase (Create Account)
+  usecase (Search Restaraunts)
+  usecase (Select Restaraunt)
+  usecase (Send Updates)
+  usecase (Add Menu Items)
+  usecase (Remove Menu Items)
+  usecase (View Order Details)
+
+}
+
+Customer --> (Create Account)
+Customer --> (Search Restaraunts)
+Customer --> (Select Restaraunt)
+Customer --> (View Order Details)
+
+Restaraunt --> (Send Updates)
+Restaraunt --> (Add Menu Items)
+Restaraunt --> (Remove Menu Items)
+Restaraunt --> (View Order Details)
+
+DeliveryDriver-->(View Order Details)
+
+
+
+@enduml

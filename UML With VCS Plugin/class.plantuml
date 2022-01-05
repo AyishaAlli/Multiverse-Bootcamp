@@ -1,0 +1,56 @@
+@startuml Deliveroo
+
+title Deliveroo App - Class Diagram
+
+
+class Customer {
+  fullName
+  emailAddress
+  orderHistory
+  placeOrder()
+  makepayment()
+}
+
+class Order {
+  number
+  details
+}
+
+class Restaraunt {
+  menu
+  location
+  openingTimes
+  closingTimes
+  contactDetails
+  addMenuItems()
+  removeMenuItems()
+  isOpen()
+}
+
+class DeliveryDriver {
+  fullName
+  employee Number
+  noOfDeliveriesCompleted
+  noOfPendingDeliveries
+  acceptDelivery()
+  markDeliverd()
+  }
+  
+class FoodCart {
+  products
+  discounts
+  totalCost
+}
+
+class Payment{
+  method
+  isCardPayment()
+  getPayment()
+}
+
+
+
+
+
+
+@enduml

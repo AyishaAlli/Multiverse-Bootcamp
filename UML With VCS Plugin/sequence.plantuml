@@ -1,0 +1,21 @@
+@startuml Deliveroo
+
+title "Deliveroo - Sequence Diagram for Searching Restaraunts without an account"
+
+actor Customer
+
+
+Customer -> App_UI : submit postcode 
+App_UI -> App_API : send postcode
+
+
+database Database
+
+App_API -> Database : Restaraunt Postcode that matches
+
+Database --> App_API : Return matching restaurants
+
+App_API --> App_UI
+
+App_UI --> Customer: show restaurants
+@enduml
