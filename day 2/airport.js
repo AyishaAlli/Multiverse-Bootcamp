@@ -1,3 +1,3 @@
-class airport {
+class Airport {
     name;
 }
