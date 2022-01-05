@@ -4,6 +4,7 @@ class passenger {
   passportNum;
   seatNum;
 
+
 constructor(name, passportNum, seatNum){
     this.name = name;
     this.passportNum = passportNum;
