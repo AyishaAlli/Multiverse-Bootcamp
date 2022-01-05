@@ -9,9 +9,10 @@ class bag {
     //function
     isOverLimit(){
         if (this.weight > 23){
-            return true
+            return 'Too Heavy!'
+            
         } else {
-            return false
+            return 'This bag is below the limit'
         }
         // this.weight > 23 ? true : false  Returning Undefined?
     } 
