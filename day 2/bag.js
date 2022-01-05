@@ -34,8 +34,6 @@ class plane {
 const hamzahBag = new bag(16)
 const bevBag = new bag(25)
 
-
 console.log(hamzahBag.isOverLimit())
 console.log(bevBag.isOverLimit())
 
-console.log()
