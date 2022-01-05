@@ -1,4 +1,4 @@
-const Passenger = require('./Passenger') 
+const Passenger = require('./passenger') 
 
 class Plane {
     //Property

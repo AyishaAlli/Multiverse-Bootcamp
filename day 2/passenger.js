@@ -1,4 +1,4 @@
-const Bag = require('./Bag') // Imports bag class 
+const Bag = require('./bag') // Imports bag class 
 
 class Passenger {
     //Properties
