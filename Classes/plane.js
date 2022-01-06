@@ -1,4 +1,4 @@
-const Passenger = require('./passenger') 
+const Passenger = require('./ClassesInJavaScript/passenger') 
 
 class Plane {
     //Property
