@@ -8,13 +8,8 @@ class Bag {
    
     //function
     isOverLimit(){
-        if (this.weight > 23){
-            return 'Too Heavy!'
-            
-        } else {
-            return 'This bag is below the limit'
-        }
-        // this.weight > 23 ? true : false  Returning Undefined?
+        return this.weight > 23 ? true : false 
+
     } 
 }
 module.exports = Bag //Allows bag class to be used by other classes 
