@@ -20,16 +20,21 @@ class Order {
 }
 
 class Restaraunt {
-  menu
   location
   openingTimes
   closingTimes
   contactDetails
-  addMenuItems()
-  removeMenuItems()
   isOpen()
 }
 
+class Menu{
+  addMenuItems()
+  removeMenuItems()
+}
+
+class MenuItem{
+  createMenuItem()
+}
 class DeliveryDriver {
   fullName
   employee Number
@@ -50,8 +55,24 @@ class Payment{
   isCardPayment()
   getPayment()
 }
+class Paypal{
+  
+}
+class CardProvider{
+  
+}
+FoodCart *-- Payment
+Payment <|--Paypal
+Payment <|--CardProvider
+
+Restaraunt <|-- Menu
+Menu *-- MenuItem
 
 
+DeliveryDriver "1" -- "many" Order
+Customer "many" -- "1" Order
+Customer "many" -- "1" FoodCart
+Restaraunt "1" -- "many" Order
 
 
 
