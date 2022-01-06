@@ -2,7 +2,7 @@
 const Passenger = require('../Passenger')
 
 
-describe('defines a suite of tests for the Bag class', function () { 
+describe('defines a suite of tests for the Passenger class', function () { 
         test('returns object with information', function(){
                 //given
                 const lisa = new Passenger('Lisa','234986', '23A');
