@@ -1,5 +1,5 @@
 const Bag = require('./bag') // Imports bag class 
-const Traveller = require('./Traveller') // Imports Traveller
+const Traveller = require('./traveller') // Imports Traveller
 
 class Passenger extends Traveller {
     //Properties

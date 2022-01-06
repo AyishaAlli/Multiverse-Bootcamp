@@ -1,7 +1,7 @@
 const Bag = require('./bag');
 const Traveller = require('./Traveller') // Imports Traveller
 
-class crewMember extends Traveller {
+class CrewMember extends Traveller {
     position;
     staffNum; 
     
@@ -13,11 +13,13 @@ class crewMember extends Traveller {
     }
 }
 
-//const ritaCrew = new crewMember('Rita', 'CabinCrew', 22)
-const ritaTraveller = new Traveller('Rita')
-const ritaLargeLuggage = new Bag(22);
-ritaTraveller.addBag(ritaLargeLuggage)
-//const benceCrew = new Traveller('Bence')
-//const bevCrew = new crewMember('Bev', 'Pilot', 3)
+module.exports = CrewMember
 
-console.log(ritaTraveller)
+//const ritaCrew = new crewMember('Rita', 'CabinCrew', 22)
+// const ritaTraveller = new Traveller('Rita')
+// const ritaLargeLuggage = new Bag(22);
+// ritaTraveller.addBag(ritaLargeLuggage)
+// //const benceCrew = new Traveller('Bence')
+// //const bevCrew = new CrewMember('Bev', 'Pilot', 3)
+
+// console.log(ritaTraveller)

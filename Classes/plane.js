@@ -1,24 +1,25 @@
-const Passenger = require('./ClassesInJavaScript/passenger') 
+const Passenger = require('./Passenger') 
+const CrewMember = require('./CrewMember') 
 
 class Plane {
     //Property
     type;
-    passengers;
+    people;
 
   constructor (type){
       this.type = type;
-      this.passengers = [] // Empty Array for passengers 
+      this.people = [] // Empty Array for people 
   }
 
   board(Passenger){
-      this.passengers.push(Passenger)
+      this.people.push(Passenger)
   }
 }
 
-const plane2342 = new Plane('plane2342')
-const lisa = new Passenger('Lisa','234986', '23A');
-const sam = new Passenger('Sam','309214', '22A');
-plane2342.board(lisa)
-plane2342.board(sam)
-console.log(plane2342.passengers)
+// const lisa = new Passenger('Lisa','234986', '23A');
+// const sam = new CrewMember('Sam', 'Pilot', 'StaffNo.44')
+// const plane444 = new Plane('plane444')
+// plane444.board(lisa)
+// plane444.board(sam)
+// console.log(plane444.people)
 

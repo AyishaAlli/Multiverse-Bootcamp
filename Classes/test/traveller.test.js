@@ -1,5 +1,5 @@
 const Bag = require("../bag")
-const Traveller = require("../Traveller")
+const Traveller = require("../traveller")
 
 
 describe('defines a suite of tests for the Passenger class', function(){
