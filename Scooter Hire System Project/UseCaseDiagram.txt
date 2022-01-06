@@ -1,0 +1,69 @@
+@startuml
+skinparam actorStyle awesome
+left to right direction
+
+
+
+Actor UnregisteredCustomer
+Actor RegisteredCustomer
+Actor Paypal
+Actor CardIssuer
+Actor Admin
+Actor Maintenance
+
+RegisteredCustomer <|- UnregisteredCustomer
+
+
+package "e-Scooter App"{
+usecase (Login)
+usecase (Register)
+usecase (View docking stations)
+usecase (Select e-scooter)
+usecase (Scan e-scooter barcode)
+usecase (Report broken e-scooter)
+usecase (Edit account details)
+usecase (Make enquiry or complaint/feedback)
+usecase (Track journey)
+usecase (View history)
+usecase (Confirm pending payment charge)
+
+}
+
+UnregisteredCustomer --> (Register)
+UnregisteredCustomer --> (View docking stations)
+
+RegisteredCustomer --> (Login)
+RegisteredCustomer --> (View docking stations)
+
+RegisteredCustomer --> (Select e-scooter)
+(Scan e-scooter barcode) .> (Select e-scooter) : extends
+
+RegisteredCustomer --> (Report broken e-scooter)
+RegisteredCustomer --> (Edit account details)
+RegisteredCustomer --> (Make enquiry or complaint/feedback)
+RegisteredCustomer --> (Track journey)
+RegisteredCustomer --> (View history)
+RegisteredCustomer --> (Confirm pending payment charge)
+
+
+(Confirm pending payment charge) --> CardIssuer
+(Confirm pending payment charge) --> Paypal
+
+(View docking stations) --> Admin
+(Edit account details) --> Admin
+(Make enquiry or complaint/feedback) --> Admin
+(Track journey) --> Admin
+(View history)  --> Admin
+
+package "e-Scooter Backend App"{
+usecase (Add e-scooter)
+usecase (Remove e-scooter)
+usecase (Report  broken e-scooter)
+}
+
+Admin --> (Add e-scooter)
+Admin --> (Remove e-scooter)
+Admin --> (Report  broken e-scooter)
+
+(Report  broken e-scooter) --> Maintenance 
+@enduml
