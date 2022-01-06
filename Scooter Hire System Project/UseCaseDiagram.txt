@@ -9,7 +9,7 @@ Actor RegisteredCustomer
 Actor Paypal
 Actor CardIssuer
 Actor Admin
-Actor Maintenance
+Actor Maintenance 
 
 RegisteredCustomer <|- UnregisteredCustomer
 
@@ -26,11 +26,13 @@ usecase (Make enquiry or complaint/feedback)
 usecase (Track journey)
 usecase (View history)
 usecase (Confirm pending payment charge)
+usecase (Add e-scooter)
+usecase (Remove e-scooter)
 
 }
 
 UnregisteredCustomer --> (Register)
-UnregisteredCustomer --> (View docking stations)
+
 
 RegisteredCustomer --> (Login)
 RegisteredCustomer --> (View docking stations)
@@ -56,14 +58,19 @@ RegisteredCustomer --> (Confirm pending payment charge)
 (View history)  --> Admin
 
 package "e-Scooter Backend App"{
-usecase (Add e-scooter)
-usecase (Remove e-scooter)
+usecase (Mark fixed e-scooters)
 usecase (Report  broken e-scooter)
+(View broken e-scooters)
 }
 
-Admin --> (Add e-scooter)
-Admin --> (Remove e-scooter)
+(Add e-scooter) <-- Admin
+(Remove e-scooter) <-- Admin
+
 Admin --> (Report  broken e-scooter)
 
 (Report  broken e-scooter) --> Maintenance 
+(View broken e-scooters) <-- Maintenance 
+(Mark fixed e-scooters) <-- Maintenance 
+(Mark fixed e-scooters) --> Admin
+
 @enduml
