@@ -3,35 +3,62 @@ Created on https://planttext.com/
 
 @startuml
 
-title Deliveroo App - Use Case Diagram
+left to right direction
 
-actor Customer
-actor Restaraunt
-actor DeliveryDriver
+Actor Customer
+Actor Restaurant
+Actor Paypal
+Actor CardIssuer
+Actor ApplePay
+Actor DeliveryDriver
+Actor CustomerServiceAgent
 
-rectangle System {
-  usecase (Create Account)
-  usecase (Search Restaraunts)
-  usecase (Select Restaraunt)
-  usecase (Send Updates)
-  usecase (Add Menu Items)
-  usecase (Remove Menu Items)
-  usecase (View Order Details)
 
+rectangle "Customer App" {
+  usecase (Register)
+  usecase (Login)
+  usecase (Search for restaurants)
+  usecase (View restaurant menu)
+  usecase (Order food)
+  usecase (Pay for order)
+  usecase (View order progress)
+  usecase (Cancel order)
+  usecase (Contact customer support)
+  usecase (View previous orders)
+}
+  Customer --> (Login)
+  Customer --> (Register)
+  Customer --> (Search for restaurants)
+  Customer --> (Order food)
+  Customer --> (Pay for order)
+  Customer --> (View order progress)
+  Customer --> (View restaurant menu)
+  Customer --> (Cancel order)
+  Customer --> (Contact customer support)  
+  Customer --> (View previous orders)
+
+  (Order food) --> Restaurant
+  (Pay for order) --> Paypal
+  (Pay for order) --> CardIssuer
+  (Pay for order) --> ApplePay
+  (Contact customer support) --> CustomerServiceAgent
+  (View previous orders) --> CustomerServiceAgent
+  (Cancel order) --> Restaurant
+  
+
+rectangle "Driver App" {
+  usecase (Accept order)
+  usecase (Decline order)
+  usecase (View delivery route)
+  usecase (Collect order)
+  usecase (Deliver order)
 }
 
-Customer --> (Create Account)
-Customer --> (Search Restaraunts)
-Customer --> (Select Restaraunt)
-Customer --> (View Order Details)
-
-Restaraunt --> (Send Updates)
-Restaraunt --> (Add Menu Items)
-Restaraunt --> (Remove Menu Items)
-Restaraunt --> (View Order Details)
-
-DeliveryDriver-->(View Order Details)
-
-
-
+  DeliveryDriver --> (Accept order)
+  DeliveryDriver --> (Decline order)
+  DeliveryDriver --> (View delivery route)
+  DeliveryDriver --> (Collect order)
+  DeliveryDriver --> (Deliver order)
+  (Collect order) --> Restaurant
+  (Deliver order) --> Customer
 @enduml
