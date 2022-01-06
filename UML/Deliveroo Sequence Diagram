@@ -3,22 +3,30 @@ Created on https://planttext.com/
 
 @startuml
 
-title "Deliveroo - Sequence Diagram for Searching Restaraunts without an account"
+title "Deliveroo - Sequence Diagram for Searching Restaraunts without creating account"
 
 actor Customer
 
+box "Front End" #LightGreen
+participant App_UI
+end box
 
+App_UI -> Customer : Prompt for postcode 
 Customer -> App_UI : submit postcode 
-App_UI -> App_API : send postcode
+App_UI -> App_API : search for restaurants(postcode)
 
-
+box "BackEnd" #LightBlue
+participant App_API
+end box 
 database Database
+
+
 
 App_API -> Database : Restaraunt Postcode that matches
 
 Database --> App_API : Return matching restaurants
 
-App_API --> App_UI
+App_API --> App_UI : List of matching restaurants 
 
-App_UI --> Customer: show restaurants
+App_UI --> Customer: show list of matching restaurants
 @enduml
