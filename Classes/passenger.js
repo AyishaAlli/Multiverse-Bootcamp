@@ -16,13 +16,13 @@ constructor(name, passportNum, seatNum){
 
 module.exports = Passenger
 
-const lisaTraveller = new Traveller('Lisa')
-const lisa = new Passenger('234986', '23A');
+//const lisaTraveller = new Traveller('Lisa')
+const lisa = new Passenger('Lisa','234986', '23A');
 const lisaHandLuggage = new Bag(8); //adds new bag with a weight of 8
 const lisaLargeLuggage = new Bag(22); //adds new back with a weight of 22
-lisaTraveller.addBag(lisaHandLuggage) //calls the addBag function with s parameter of one of bags I created 
-lisaTraveller.addBag(lisaLargeLuggage)
+lisa.addBag(lisaHandLuggage) //calls the addBag function with s parameter of one of bags I created 
+lisa.addBag(lisaLargeLuggage)
 
-console.log(lisaTraveller)
+console.log(lisa)
 //console.log(lisaTraveller.bags)
 //console.log(lisa)
