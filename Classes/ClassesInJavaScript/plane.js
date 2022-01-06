@@ -15,10 +15,10 @@ class Plane {
   }
 }
 
-const bA2342 = new Plane('BA2342')
+const plane2342 = new Plane('plane2342')
 const lisa = new Passenger('Lisa','234986', '23A');
 const sam = new Passenger('Sam','309214', '22A');
-bA2342.board(lisa)
-bA2342.board(sam)
-console.log(bA2342.passengers)
+plane2342.board(lisa)
+plane2342.board(sam)
+console.log(plane2342.passengers)
 
