@@ -2,15 +2,30 @@
 
 All of my work completed on my 5-week Multiverse bootcamp can be found in this repo
 
-### UML Folder 
+### Week 1
 
-Contains initial Diagram text and screenshot images of diagrams
+#### Deliveroo UML Diagrams
+Created 3 UML diagrams of a deliveroo featur 
+- Usecase Diagram
+- Class Diagram
+- Sequence Diagram
 
-### UML with VSC Folder
+#### Airport Classes 
+Created Classes for an airport 
+Also tested the classes 
+- Airport
+- Plane
+- Traveller (Inc Passenger & CrewMember)
+- Bags
 
-Contains .plantuml docs which when updated, will update the diagram.
-The diagram can de found if you clone this repo and right-click the document then click on 'Preview Current Diagram' - Must have plantUML installed on your visual studio code first.
+#### Scooter Hire System
+Individual Project Set by Coach 
 
-### Classes Folder
 
-Created Classes from Example UML diagram (Given in the bootcamp lesson) in JavaScript
+
+
+
+### Week 2
+### Week 3
+### Week 4
+### Week 5
