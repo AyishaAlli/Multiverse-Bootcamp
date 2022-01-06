@@ -1,10 +1,10 @@
 # Multiverse Bootcamp
 
-All work completed on my 5-week Multiverse bootcamp can be found in this repo
+All of my work completed on my 5-week Multiverse bootcamp can be found in this repo
 
 ### UML Folder 
 
-Contains initial Diafram text and screenshot images of diagrams
+Contains initial Diagram text and screenshot images of diagrams
 
 ### UML with VSC Folder
 
