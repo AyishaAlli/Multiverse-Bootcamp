@@ -21,16 +21,9 @@ class Scooter {
             return false
         }
     }
-
-    isBroken(){
-        if (this.condition == 'Broken'){
-            brokenScooters.push(this.id)
-            console.log('worked')
-        }
-    }
+    
 }
+module.exports = Scooter;
 
-const newScooter = new Scooter('2312', 200, 'Broken')
+//const newScooter = new Scooter('2312', 200, 'Broken')
 
-console.log(newScooter.isBroken())
-//console.log('hello')
