@@ -16,6 +16,8 @@ class Plane {
   }
 }
 
+module.exports = Plane
+
 // const lisa = new Passenger('Lisa','234986', '23A');
 // const sam = new CrewMember('Sam', 'Pilot', 'StaffNo.44')
 // const plane444 = new Plane('plane444')

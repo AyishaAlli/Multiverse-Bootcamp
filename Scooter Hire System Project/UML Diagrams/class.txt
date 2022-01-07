@@ -1,0 +1,51 @@
+@startuml
+class User {
+name
+
+}
+
+
+
+class Customer {
+personalDetails
+
+}
+
+class Admin {
+employeeNo
+
+}
+
+class DockingStation {
+scootersAvailable
+totalSpaces
+isSpaceAvailable()
+
+}
+
+class Scooter {
+batteryLife
+condition
+location
+isFullyChargedandAvaiable()
+reportBroken()
+unlockScooter()
+}
+
+class Payment {
+method
+}
+class Paypal {}
+class CardProvider{}
+
+Customer -- Scooter
+Admin -- DockingStation
+DockingStation -- Scooter
+Scooter -- Payment
+
+User <|-- Customer
+User <|-- Admin
+
+Payment <|-- Paypal
+Payment <|-- CardProvider
+@enduml 
