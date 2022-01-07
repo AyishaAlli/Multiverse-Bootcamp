@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1641551701198" clover="3.2.0">
-  <project timestamp="1641551701198" name="All files">
-    <metrics statements="32" coveredstatements="32" conditionals="2" coveredconditionals="1" methods="8" coveredmethods="8" elements="42" coveredelements="41" complexity="0" loc="32" ncloc="32" packages="1" files="5" classes="5"/>
+<coverage generated="1641552004639" clover="3.2.0">
+  <project timestamp="1641552004639" name="All files">
+    <metrics statements="32" coveredstatements="32" conditionals="2" coveredconditionals="2" methods="8" coveredmethods="8" elements="42" coveredelements="42" complexity="0" loc="32" ncloc="32" packages="1" files="5" classes="5"/>
     <file name="bag.js" path="/Users/ayishaalli/Library/Mobile Documents/com~apple~CloudDocs/TECH/Multiverse Bootcamp/Airport Classes/src/bag.js">
-      <metrics statements="3" coveredstatements="3" conditionals="2" coveredconditionals="1" methods="2" coveredmethods="2"/>
-      <line num="6" count="11" type="stmt"/>
-      <line num="11" count="1" type="cond" truecount="1" falsecount="1"/>
+      <metrics statements="3" coveredstatements="3" conditionals="2" coveredconditionals="2" methods="2" coveredmethods="2"/>
+      <line num="6" count="12" type="stmt"/>
+      <line num="11" count="2" type="cond" truecount="2" falsecount="0"/>
       <line num="15" count="5" type="stmt"/>
     </file>
     <file name="crewmember.js" path="/Users/ayishaalli/Library/Mobile Documents/com~apple~CloudDocs/TECH/Multiverse Bootcamp/Airport Classes/src/crewmember.js">

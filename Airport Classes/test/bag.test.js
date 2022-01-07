@@ -18,5 +18,12 @@ describe('defines a suite of tests for the Bag class', function () {
         // then
         expect(mandysBag.isOverLimit()).toBe(false);
     });
-
+    
+    test('cheks if over limit', function () {
+        // given
+        const mandysBag = new Bag(25);
+        
+        // then
+        expect(mandysBag.isOverLimit()).toBe(true);
+    });
 });
