@@ -1,4 +1,6 @@
-const User = require('./User');
+const User = require('./user');
+const DockingStation = require('./docking_station');
+
 
 class Scooter {
     id
@@ -19,9 +21,16 @@ class Scooter {
             return false
         }
     }
+
+    isBroken(){
+        if (this.condition == 'Broken'){
+            brokenScooters.push(this.id)
+            console.log('worked')
+        }
+    }
 }
 
-//const newScooter = new Scooter('2312', 200, 'Broken')
+const newScooter = new Scooter('2312', 200, 'Broken')
 
-//console.log(newScooter.isFullyChargedandAvail())
+console.log(newScooter.isBroken())
 //console.log('hello')

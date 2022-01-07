@@ -3,13 +3,13 @@ class DockingStation{
     location
     totalSpaces
     scootersAvail
-    brokenScooters
+    brokenScooters = []
 
-   constructor(location, totalSpaces, scootersAvail, brokenScooters){
+   constructor(location, totalSpaces, scootersAvail, /*brokenScooters*/){
     this.location = location   
     this.totalSpaces = totalSpaces;
     this.scootersAvail = scootersAvail;
-    this.brokenScooters = brokenScooters;
+    //this.brokenScooters = brokenScooters;
    }
 
    areScootersAvail(){
@@ -30,6 +30,8 @@ class DockingStation{
    }
 
 }
+
+module.exports = DockingStation;
 
 const lewishamDockingStation = new DockingStation('Lewisham',10,5,0);
 console.log(lewishamDockingStation.areScootersAvail())
