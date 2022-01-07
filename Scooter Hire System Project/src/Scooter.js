@@ -13,7 +13,7 @@ class Scooter {
         //this.location = location
     }
     isFullyChargedandAvail(){
-        if (battery > 120 && this.condition == 'Working'){
+        if (this.battery > 120 && this.condition == 'Working'){
           return true
         } else {
             return false
@@ -21,7 +21,7 @@ class Scooter {
     }
 }
 
-const newScooter = new Scooter('2312', 200, 'Working')
+//const newScooter = new Scooter('2312', 200, 'Broken')
 
 //console.log(newScooter.isFullyChargedandAvail())
-console.log('hello')
+//console.log('hello')
