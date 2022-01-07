@@ -1,0 +1,31 @@
+@startuml
+skinparam actorStyle awesome
+left to right direction
+
+
+
+
+Actor Admin
+Actor Maintenance 
+Actor Scooter
+
+
+
+package "e-Scooter Maintenance  App"{
+usecase (Mark fixed scooters)
+usecase (Mark broken scooter)
+usecase (View broken scooters)
+}
+
+
+
+Admin --> (Mark broken scooter) 
+(Mark broken scooter) --> Scooter
+
+(Mark broken scooter) --> Maintenance 
+(View broken scooters) <-- Maintenance 
+(Mark fixed scooters) <-- Maintenance 
+(Mark fixed scooters) --> Admin
+(Mark fixed scooters) --> Scooter
+
+@enduml

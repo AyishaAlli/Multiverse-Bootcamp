@@ -9,7 +9,8 @@ Actor RegisteredCustomer
 Actor Paypal
 Actor CardIssuer
 Actor Admin
-Actor Maintenance 
+Actor Scooter
+Actor DockingStation 
 
 RegisteredCustomer <|- UnregisteredCustomer
 
@@ -18,16 +19,18 @@ package "e-Scooter App"{
 usecase (Login)
 usecase (Register)
 usecase (View docking stations)
-usecase (Select e-scooter)
-usecase (Scan e-scooter barcode)
-usecase (Report broken e-scooter)
+usecase (Select scooter)
+usecase (Scan scooter barcode)
+usecase (Report broken scooter)
 usecase (Edit account details)
 usecase (Make enquiry or complaint/feedback)
 usecase (Track journey)
 usecase (View history)
 usecase (Confirm pending payment charge)
-usecase (Add e-scooter)
-usecase (Remove e-scooter)
+usecase (Add scooter)
+usecase (Remove scooter)
+usecase (Charge scooter)
+usecase (Return scooter)
 
 }
 
@@ -37,16 +40,20 @@ UnregisteredCustomer --> (Register)
 RegisteredCustomer --> (Login)
 RegisteredCustomer --> (View docking stations)
 
-RegisteredCustomer --> (Select e-scooter)
-(Scan e-scooter barcode) .> (Select e-scooter) : extends
+RegisteredCustomer --> (Select scooter)
+RegisteredCustomer --> (Scan scooter barcode)
 
-RegisteredCustomer --> (Report broken e-scooter)
+RegisteredCustomer --> (Report broken scooter)
 RegisteredCustomer --> (Edit account details)
 RegisteredCustomer --> (Make enquiry or complaint/feedback)
 RegisteredCustomer --> (Track journey)
 RegisteredCustomer --> (View history)
 RegisteredCustomer --> (Confirm pending payment charge)
+RegisteredCustomer --> (Charge scooter)
 
+(Charge scooter) --> Scooter
+(Scan scooter barcode) --> Scooter
+(Return scooter) --> Scooter
 
 (Confirm pending payment charge) --> CardIssuer
 (Confirm pending payment charge) --> Paypal
@@ -57,20 +64,11 @@ RegisteredCustomer --> (Confirm pending payment charge)
 (Track journey) --> Admin
 (View history)  --> Admin
 
-package "e-Scooter Backend App"{
-usecase (Mark fixed e-scooters)
-usecase (Report  broken e-scooter)
-(View broken e-scooters)
-}
 
-(Add e-scooter) <-- Admin
-(Remove e-scooter) <-- Admin
 
-Admin --> (Report  broken e-scooter)
+(Add scooter) <-- Admin
+(Remove scooter) <-- Admin
 
-(Report  broken e-scooter) --> Maintenance 
-(View broken e-scooters) <-- Maintenance 
-(Mark fixed e-scooters) <-- Maintenance 
-(Mark fixed e-scooters) --> Admin
+
 
 @enduml
