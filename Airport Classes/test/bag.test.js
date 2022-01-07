@@ -1,4 +1,4 @@
-const Bag = require('../Bag')
+const Bag = require('../src/Bag')
 
 
 describe('defines a suite of tests for the Bag class', function () { 

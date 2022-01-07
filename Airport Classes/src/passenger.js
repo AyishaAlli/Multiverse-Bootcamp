@@ -12,6 +12,7 @@ constructor(name, passportNum, seatNum){
     this.seatNum = seatNum
 }
 
+
 }
 
 module.exports = Passenger

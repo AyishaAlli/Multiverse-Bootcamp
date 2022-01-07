@@ -1,5 +1,5 @@
 
-const Passenger = require('../Passenger')
+const Passenger = require('../src/Passenger')
 
 
 describe('defines a suite of tests for the Passenger class', function () { 
@@ -13,4 +13,5 @@ describe('defines a suite of tests for the Passenger class', function () {
                 expect(lisa.passportNum).toBe('234986')
                 expect(lisa.seatNum).toBe('23A')
         })
+
 });
