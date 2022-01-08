@@ -5,6 +5,7 @@ class RegisteredCustomer extends User{
     email;
     PaymentDetails = []
     withScooter = false;
+    pastJourneys = [];
     
 
     constructor(name, email){
@@ -18,14 +19,19 @@ class RegisteredCustomer extends User{
 
         
     }
+    
 
-    startJourney(dockingStationAvail){ // how can i keep track of journeys?
+    startJourney(s){ // how can i keep track of journeys?
+
         this.withScooter = true;
+        
+
     
     }
 
     endJourney(){
         this.withScooter = false;
+
     }
 }
 

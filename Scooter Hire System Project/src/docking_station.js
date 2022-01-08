@@ -30,25 +30,32 @@ class DockingStation{
        
    }
 
-    addScooter(scooterId, condition){
-        if (condition == 'Working'){
-            this.scootersAvail.push(scooterId)
-    
-        } else if (condition === 'Broken'){
-            this.brokenScooters.push(scooterId)
-        } else {
-            console.log('please enter valid condition')
-        }
+
+
+addScooter(scooter){
+    if (scooter.condition === 'Working'){
+        this.scootersAvail.push(scooter.id)
+
+    } else if (scooter.condition === 'Broken'){
+        this.brokenScooters.push(scooter.id)
+    } else {
+        return 'please enter valid condition'
     }
-    
 }
+
+
+    
+ }
+
+ 
+
 
 module.exports = DockingStation;
 
-//const lewishamDockingStation = new DockingStation('Lewisham',2);
-//const scooterOne = new Scooter('1111', 200, 'Working')
-//const scooterTwo = new Scooter('2222', 200, 'Broken')
+const lewishamDockingStation = new DockingStation('Lewisham',2);
+const scooterOne = new Scooter('1111', 200, 'Wordg')
+const scooterTwo = new Scooter('2222', 200, 'Broken')
 
-//lewishamDockingStation.addScooter('1111', 'Working')
-//console.log(lewishamDockingStation)
+lewishamDockingStation.addScooter(scooterOne)
+console.log(lewishamDockingStation)
 
