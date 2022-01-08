@@ -52,10 +52,10 @@ addScooter(scooter){
 
 module.exports = DockingStation;
 
-const lewishamDockingStation = new DockingStation('Lewisham',2);
-const scooterOne = new Scooter('1111', 200, 'Wordg')
-const scooterTwo = new Scooter('2222', 200, 'Broken')
+// const lewishamDockingStation = new DockingStation('Lewisham',2);
+// const scooterOne = new Scooter('1111', 200, 'Wordg')
+// const scooterTwo = new Scooter('2222', 200, 'Broken')
 
-lewishamDockingStation.addScooter(scooterOne)
-console.log(lewishamDockingStation)
+// lewishamDockingStation.addScooter(scooterOne)
+// console.log(lewishamDockingStation)
 

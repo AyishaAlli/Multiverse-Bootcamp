@@ -5,9 +5,11 @@ describe('docking station', function(){
     test('check if space is available ', function (){
         //when
         const lewishamDockingStation = new DockingStation('Lewisham',2);
+        const elthamDockingStation = new DockingStation('Eltham',0);
  
         //then
         expect(lewishamDockingStation.isSpaceAvail()).toBe(true)
+        expect(elthamDockingStation.isSpaceAvail()).toBe(false)
         
     }) 
     test('checks if a scooter is available', function (){
