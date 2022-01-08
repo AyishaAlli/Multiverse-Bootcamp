@@ -40,6 +40,7 @@ class DockingStation{
             console.log('please enter valid condition')
         }
     }
+    
 }
 
 module.exports = DockingStation;
@@ -48,4 +49,6 @@ module.exports = DockingStation;
 //const scooterOne = new Scooter('1111', 200, 'Working')
 //const scooterTwo = new Scooter('2222', 200, 'Broken')
 
+//lewishamDockingStation.addScooter('1111', 'Working')
+//console.log(lewishamDockingStation)
 

@@ -1,8 +1,8 @@
 const { TestWatcher } = require("jest")
-const Scooter = require("../src/scooter");
+const Scooter = require("../scooter");
 
 
-describe('testing', function(){
+describe('', function(){
     test('if working scooter is fully charge', function (){
         //when
         const newScooter = new Scooter('2312', 200, 'Working')
