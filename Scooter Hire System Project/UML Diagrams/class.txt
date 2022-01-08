@@ -4,11 +4,16 @@ name
 
 }
 
+class Customer{
+AreTheyRegistered()
+}
+class UnregisteredCustomer{
+register()
+}
 
-
-class Customer {
+class RegisteredCustomer {
 personalDetails
-
+login()
 }
 
 class Admin {
@@ -28,8 +33,18 @@ batteryLife
 condition
 location
 isFullyChargedandAvaiable()
-reportBroken()
 unlockScooter()
+
+}
+class Maintenance {
+markFixed()
+}
+class Charge{
+charge()
+}
+class Broken {
+listOfBrokenScooters
+reportBroken()
 }
 
 class Payment {
@@ -38,13 +53,19 @@ method
 class Paypal {}
 class CardProvider{}
 
-Customer -- Scooter
+RegisteredCustomer -- Scooter
 Admin -- DockingStation
+RegisteredCustomer -- DockingStation
 DockingStation -- Scooter
 Scooter -- Payment
+Scooter -- Charge
+Scooter -- Broken
+Broken -- Maintenance 
 
-User <|-- Customer
+User <|-- RegisteredCustomer
 User <|-- Admin
+Customer <|-- UnregisteredCustomer
+Customer <|-- RegisteredCustomer
 
 Payment <|-- Paypal
 Payment <|-- CardProvider
