@@ -1,0 +1,41 @@
+@startuml
+title "Scooter hire system register process"
+
+actor "Unregistered Customer" as Ucustomer
+box "Front End" #Green
+participant Portal
+end box
+box "Back End" #Orange
+participant App_API
+end box
+
+database Database
+Portal -> Ucustomer ++: Request login registration details
+
+Ucustomer -> App_API ++: Enter email
+App_API -> Database ++ : CheckEmail()
+alt Success 
+Database -> App_API : Doesn't Exist
+App_API -> Ucustomer : Prompt Enter Passowrd
+else Failure 
+Database -> App_API --: Exists
+App_API -> Ucustomer --: Message "email already exists, Please sign in"
+end
+
+Ucustomer -> App_API ++: Enter Password
+opt Password doesnt mean Criteria 
+App_API -> Ucustomer : show Invalid error
+
+end
+
+Ucustomer -> App_API : clickSignUp()
+App_API -> Database ++: createUser()
+Database -> "New Customer" as Ncustomer ** : Create
+Database -> App_API --:User Created
+
+App_API -> Portal --: Redirect to Homepage (Now logged in)
+deactivate Portal
+
+
+
+@enduml 
