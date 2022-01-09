@@ -22,6 +22,7 @@ class Scooter {
             return false
         }
     }
+    
         //charges at docking station
     // isCharging(dockingStation, scooter){ //if at docking station then this should return true
     //     for (let i = 0; i < dockingStation.length; i++) {
