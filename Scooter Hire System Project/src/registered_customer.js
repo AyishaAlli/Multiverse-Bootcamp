@@ -21,7 +21,7 @@ class RegisteredCustomer extends User{
     }
     
 
-    startJourney(s){ // how can i keep track of journeys?
+    startJourney(scooter){ // how can i keep track of journeys?
 
         this.withScooter = true;
         
@@ -29,7 +29,8 @@ class RegisteredCustomer extends User{
     
     }
 
-    endJourney(){
+    endJourney(scooter){
+        
         this.withScooter = false;
 
     }
