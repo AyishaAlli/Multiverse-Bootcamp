@@ -1,13 +1,14 @@
 const User = require('./user')
+const Scooter = require('./scooter')
 
 class Maintenance extends User{
 
- EmployeeNo;
+ employeeNo;
 pendingJobs = [];
 
-constructor(name, EmployeeNo){
+constructor(name, employeeNo){
     super(name);
-    EmployeeNo;
+    this.employeeNo = employeeNo;
 }
     
 addJob(scooter){
@@ -24,3 +25,5 @@ markJobComplete(scooter){
 
 
 }
+
+module.exports = Maintenance;

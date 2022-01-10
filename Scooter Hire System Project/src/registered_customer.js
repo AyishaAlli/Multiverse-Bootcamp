@@ -21,11 +21,11 @@ class RegisteredCustomer extends User{
 
         
     }
-    scanScooter(scooter){
-      if (scooter.condition != 'Working' && scooter.battery === 200){
-         //should allow 'start Journey' button to appear 
-      }
-    }
+    // scanScooter(scooter){
+    //   if (scooter.condition != 'Working' && scooter.battery === 200){
+         
+    //   }
+    // }
     
 
     startJourney(scooter){ 

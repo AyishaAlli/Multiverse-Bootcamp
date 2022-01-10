@@ -4,8 +4,9 @@ const Scooter = require('../src/scooter')
 class Admin extends User {
 
     EmployeeNo;
+    Reported = [];
 
-    constructor(name, EmployeeNo) {
+    constructor(name, employeeNo) {
         super(name);
         this.EmployeeNo = EmployeeNo
     }
@@ -13,6 +14,7 @@ class Admin extends User {
     MarkIssue(scooter) {
         if (scooter.condition === 'Working') {
             scooter.condition = 'Broken'
+            this.Reported.push(scooter.Id)
         } else { 
             return 'Already marked as broken' 
         }
@@ -20,8 +22,8 @@ class Admin extends User {
 }
 module.exports = Admin
 
-const julie = new Admin('Julie', 342152)
-const scooterOne = new Scooter('1111', 200, 'Working')
-const scooterTwo = new Scooter('2222', 200, 'Broken')
+// const julie = new Admin('Julie', 342152)
+// const scooterOne = new Scooter('1111', 200, 'Working')
+// const scooterTwo = new Scooter('2222', 200, 'Broken')
 //julie.MarkIssue(scooterOne)
-console.log(scooterOne)
+//console.log(scooterOne)
