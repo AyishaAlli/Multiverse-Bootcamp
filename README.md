@@ -19,13 +19,14 @@ Also tested the classes
 - Bags
 
 #### Scooter Hire System
-Individual Project Set by Coach 
-
-
-
+Project Set by Coach 
+- UML Diagrams, Classes and Unit Testing
 
 
 ### Week 2
+Restaurant 
+-SQL
+
 ### Week 3
 ### Week 4
 ### Week 5
