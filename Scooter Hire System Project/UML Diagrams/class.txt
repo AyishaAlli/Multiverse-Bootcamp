@@ -4,12 +4,8 @@ name
 
 }
 
-class Customer{
-AreTheyRegistered()
-}
-class UnregisteredCustomer{
-register()
-}
+
+
 
 class RegisteredCustomer {
 personalDetails
@@ -53,20 +49,20 @@ method
 class Paypal {}
 class CardProvider{}
 
-RegisteredCustomer -- Scooter
-Admin -- DockingStation
-RegisteredCustomer -- DockingStation
-DockingStation -- Scooter
-Scooter -- Payment
-Scooter -- Charge
-Scooter -- Broken
+
+Admin "1" -- "1..*" DockingStation
+RegisteredCustomer "many" -- "1..*" DockingStation
+DockingStation "1" o-- "many" Scooter
+Scooter -- RegisteredCustomer
+Scooter *-- Charge
+Scooter *-- Broken
 Broken -- Maintenance 
 
 User <|-- RegisteredCustomer
 User <|-- Admin
-Customer <|-- UnregisteredCustomer
-Customer <|-- RegisteredCustomer
 
+
+RegisteredCustomer -- Payment
 Payment <|-- Paypal
 Payment <|-- CardProvider
 @enduml 
