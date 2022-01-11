@@ -23,8 +23,5 @@ Users should be able to:
 - JavaScript
 
 
-## Author
 
-- Website - [Ayisha Alli](https://www.ayishaalli.com)
-- Twitter - [@Ayishaalli_dev](https://www.twitter.com/ayishaalli_dev)
 
