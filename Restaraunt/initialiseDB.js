@@ -5,7 +5,12 @@ function initialise() {
 
     try {
         db.serialize(function () { 
-            db.run("CREATE TABLE RESTAURANTS (id INTEGER PRIMARY KEY AUTOINCREMENT, name TEXT, imagelink TEXT)");
+            db.run("CREATE TABLE IF NOT EXISTS RESTAURANTS  (id INTEGER PRIMARY KEY AUTOINCREMENT, name TEXT, imagelink TEXT)");
+            //db.run('DROP TABLE IF EXISTS MENUS')
+            db.run("CREATE TABLE IF NOT EXISTS MENUS (id INTEGER PRIMARY KEY AUTOINCREMENT,title TEXT,restaurants_id INTEGER,FOREIGN KEY (restaurants_id) REFERENCES restaurants(id));");
+            db.run('CREATE TABLE IF NOT EXISTS MENU_ITEMS (id INTEGER PRIMARY KEY AUTOINCREMENT, name TEXT, price INTEGER,menus_id INTEGER,FOREIGN KEY (menus_id) REFERENCES menus(id));')
+            
+            
         });
     } finally { 
         // very important to always close database connections

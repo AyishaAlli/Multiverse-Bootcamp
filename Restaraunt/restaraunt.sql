@@ -70,6 +70,7 @@ FROM restaurants
 INNER JOIN menus ON restaurants.id = menus.restaurants_id
 GROUP BY restaurants.name;
 
+
 -- Select all the menus, with the total cost of all the menu items summed. In descending order 
 
 -- For some reason, when i run the below code, it only prints out the first Menu Title and the sum..
