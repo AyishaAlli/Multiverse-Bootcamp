@@ -11,8 +11,8 @@ class Plane {
       this.people = [] // Empty Array for people 
   }
 
-  board(Passenger){
-      this.people.push(Passenger)
+  board(passenger){
+      this.people.push(passenger)
   }
 }
 
