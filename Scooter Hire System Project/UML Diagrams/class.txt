@@ -50,19 +50,19 @@ class Paypal {}
 class CardProvider{}
 
 
-Admin "1" -- "1..*" DockingStation
-RegisteredCustomer "many" -- "1..*" DockingStation
-DockingStation "1" o-- "many" Scooter
-Scooter -- RegisteredCustomer
-Scooter *-- Charge
-Scooter *-- Broken
-Broken -- Maintenance 
+Admin "1" -- "1..*" DockingStation : has access to 
+RegisteredCustomer "many" -- "1..*" DockingStation : goes to
+DockingStation "1" o-- "many" Scooter : holds
+Scooter -- RegisteredCustomer : assigned to 
+Scooter *-- Charge : can
+Scooter *-- Broken : can be 
+Broken -- Maintenance : fixed by
 
-User <|-- RegisteredCustomer
-User <|-- Admin
+User <|-- RegisteredCustomer :type of 
+User <|-- Admin : type of 
 
 
-RegisteredCustomer -- Payment
-Payment <|-- Paypal
-Payment <|-- CardProvider
+RegisteredCustomer -- Payment 
+Payment <|-- Paypal : type of
+Payment <|-- CardProvider : type of 
 @enduml 
