@@ -25,32 +25,15 @@ class Scooter {
         }
     }
 
-    checkRange(scooter){
+    checkRange(){
         if (this.range === 32){
             return 'Full Range'
-        } else if (this.range < 10){
+        } else if (this.range <= 10){
             return 'please start making your way to the nearest docking station'
-        }
-        else if (this.range < 3){
-            return 'please return your scooter to the nearest docking station'
-        } else {
-            return 'error'
         }
     }
     
-        //charges at docking station
-    // isCharging(dockingStation, scooter){ //if at docking station then this should return true
-    //     for (let i = 0; i < dockingStation.length; i++) {
-    //         if(dockingStation.scootersAvail[i] = scooter.id){
-    //             this.charging = true
-
-    //         } else {
-    //             this.charging = false
-    //         }
-            
-    //     }
-        
-    //} 
+    
     
 }
 module.exports = Scooter;

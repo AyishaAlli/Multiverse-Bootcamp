@@ -16,9 +16,10 @@ describe('', function(){
     test('Checks range', function(){
         const scooterOne = new Scooter('2312', 200, 'Working', 32);
         const scooterTwo = new Scooter('2312', 200, 'Working', 9);
-        const scooterThree = new Scooter('2312', 200, 'Working', 2);
+        
 
         expect(scooterOne.checkRange()).toBe('Full Range')
-        //expect(scooterTwo.checkRange()).toBe(`range: ${range}please start making your way to the nearest docking station`)
+        expect(scooterTwo.checkRange()).toBe('please start making your way to the nearest docking station')
+        
     })
 })
