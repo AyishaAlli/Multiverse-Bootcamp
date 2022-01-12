@@ -19,32 +19,17 @@ try {
             // Adding Menus
             // stmt = db.prepare(`INSERT INTO MENUS (title, restaurants_id ) VALUES (?, ?)`);
             // stmt.run('Breakfast', 1);
-            // stmt.run('Lunch', 1);
             // stmt.run('Breakfast', 2);
-            // stmt.run('Lunch', 2);
-            // stmt.run('Breakfast', 3);
             // stmt.run('Lunch', 3);
-            // stmt.run('Breakfast', 4);
             // stmt.run('Lunch', 4);
             
             //Adding Menu Items 
-            stmt = db.prepare(`INSERT INTO MENU_ITEMS (name, price, menus_id ) VALUES (?, ?, ?)`);
-            // stmt.run('Item 1',7.99, 1);
-            // stmt.run('Item 2',3, 1);
-            // stmt.run('Item 1',8, 2);
-            // stmt.run('Item 2',6, 2);
-            // stmt.run('Item 1',7.99, 3);
-            // stmt.run('Item 2',9.50, 3);
-            // stmt.run('Item 1',2.50, 4);
-            // stmt.run('Item 2',12, 4);
-            // stmt.run('Item 1',4, 5);
-            // stmt.run('Item 2',4.99, 5);
-            // stmt.run('Item 1',2, 6);
-            // stmt.run('Item 2',7.65, 6);
-            stmt.run('Item 1',3.33, 7);
-            stmt.run('Item 2',5.50, 7);
-            stmt.run('Item 1',7, 8);
-            stmt.run('Item 2',9.54, 8);
+            // stmt = db.prepare(`INSERT INTO MENU_ITEMS (name, price, menus_id ) VALUES (?, ?, ?)`);
+            // stmt.run('Oysters',7.99, 1);
+            // stmt.run('Hash Brown',7.99, 2);
+            // stmt.run('Cheese Burger',2, 3);
+            // stmt.run('Chicken Royale',7, 4);
+            
             
            
         } finally {
