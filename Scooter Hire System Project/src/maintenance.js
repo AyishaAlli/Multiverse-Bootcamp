@@ -3,7 +3,7 @@ const Scooter = require('./scooter')
 
 class Maintenance extends User{
 
- employeeNo;
+employeeNo;
 pendingJobs = [];
 
 constructor(name, employeeNo){
@@ -17,8 +17,7 @@ addJob(scooter){
 
 markJobComplete(scooter){
     if (this.pendingJobs.includes(scooter.id)) {
-        //delete this.pendingJobs()
-        //how do i delete the scooter id from the arrat   
+        this.pendingJobs.pop(); // cant add another job without completing current job   
     }
     scooter.id === 'Working'
 }

@@ -4,7 +4,11 @@ const Scooter = require('./scooter');
 
 class RegisteredCustomer extends User{
     email;
-    PaymentDetails = []
+    PaymentDetails = {
+        sortCode:'',
+        accNo:''
+
+    }
     withScooter = false;
     scooterId;
     pastJourneys = [];
@@ -15,11 +19,10 @@ class RegisteredCustomer extends User{
         this.email = email
     }
 
-    addPaymentDetails(sortCode, AccNo){
-        this.PaymentDetails.push('Sortcode:'+' '+sortCode)
-        this.PaymentDetails.push('Account Number:'+' '+AccNo)
+    addPaymentDetails(sortCode, accNo){
+        this.PaymentDetails.sortCode = sortCode;
+        this.PaymentDetails.accNo = accNo;
 
-        
     }
     // scanScooter(scooter){
     //   if (scooter.condition != 'Working' && scooter.battery === 200){
@@ -45,11 +48,11 @@ class RegisteredCustomer extends User{
 
 module.exports = RegisteredCustomer
 
-const rae = new RegisteredCustomer('Rae', 'aa@.com')
-const scooter12 = new Scooter('1111', 120, 'Working', 32)
+//const rae = new RegisteredCustomer('Rae', 'aa@.com')
+//const scooter12 = new Scooter('1111', 120, 'Working', 32)
 
-rae.startJourney(scooter12)
+//rae.startJourney(scooter12)
 //console.log(rae)
-rae.endJourney(scooter12)
-console.log(rae)
+//rae.endJourney(scooter12)
+//console.log(rae)
 

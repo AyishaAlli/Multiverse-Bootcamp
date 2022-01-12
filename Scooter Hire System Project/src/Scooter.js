@@ -26,13 +26,15 @@ class Scooter {
     }
 
     checkRange(scooter){
-        if (scooter.range = 32){
+        if (this.range === 32){
             return 'Full Range'
-        } else if (scooter.range < 10){
+        } else if (this.range < 10){
             return 'please start making your way to the nearest docking station'
         }
-        else if (scooter.range < 3){
+        else if (this.range < 3){
             return 'please return your scooter to the nearest docking station'
+        } else {
+            return 'error'
         }
     }
     
@@ -55,7 +57,8 @@ module.exports = Scooter;
 
 // //const newScooter = new Scooter('2312', 200, 'Broken')
 // const lewishamDockingStation = new DockingStation('Lewisham',2);
-// const scooterOne = new Scooter('1111', 200, 'Working')
+//const scooterOne = new Scooter('1111', 200, 'Working', 2)
+//console.log(scooterOne.checkRange(scooterOne));
 // // const scooterTwo = new Scooter('2222', 200, 'Broken')
 
 // lewishamDockingStation.addScooter(scooterOne)

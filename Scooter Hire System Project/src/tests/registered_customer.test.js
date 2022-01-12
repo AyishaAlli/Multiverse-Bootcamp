@@ -15,8 +15,8 @@ describe('registered customer', function(){
         rae = new RegisteredCustomer('Rae', 'aa@.com')
         rae.addPaymentDetails('20-20-20', '222222')
         
-        expect(rae.PaymentDetails).toContain('Sortcode: 20-20-20')
-        expect(rae.PaymentDetails).toContain('Account Number: 222222')
+        expect(rae.PaymentDetails.sortCode).toContain('20-20-20')
+        expect(rae.PaymentDetails.accNo).toContain('222222')
         
     })
     test('starts journey', function(){
