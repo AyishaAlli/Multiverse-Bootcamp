@@ -59,6 +59,7 @@
     "isarray": "^1.0.0",
     "isexe": "^2.0.0",
     "isstream": "^0.1.2",
+    "jest": "^27.4.7",
     "jsbn": "^0.1.1",
     "json-schema": "^0.4.0",
     "json-schema-traverse": "^0.4.1",
@@ -124,7 +125,8 @@
     "yallist": "^3.1.1"
   },
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "jest",
+    "test:report": "jest --coverage=true"
   },
   "author": "",
   "license": "ISC"
