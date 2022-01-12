@@ -15,7 +15,7 @@ describe('admin', function(){
     test('successfully marks issue with scooter', function(){
         const julie = new Admin('Julie', 342152);
         const scooterOne = new Scooter('1111', 200, 'Working')
-        julie.MarkIssue(scooterOne)
+        julie.markIssue(scooterOne)
 
         expect(scooterOne.condition).toBe('Broken');
         expect(julie.Reported).toContain(scooterOne.Id)

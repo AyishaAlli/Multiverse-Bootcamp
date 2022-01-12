@@ -8,10 +8,10 @@ class Admin extends User {
 
     constructor(name, employeeNo) {
         super(name);
-        this.EmployeeNo = EmployeeNo
+        this.EmployeeNo = employeeNo
     }
 
-    MarkIssue(scooter) {
+    markIssue(scooter) {
         if (scooter.condition === 'Working') {
             scooter.condition = 'Broken'
             this.Reported.push(scooter.Id)
@@ -25,5 +25,5 @@ module.exports = Admin
 // const julie = new Admin('Julie', 342152)
 // const scooterOne = new Scooter('1111', 200, 'Working')
 // const scooterTwo = new Scooter('2222', 200, 'Broken')
-//julie.MarkIssue(scooterOne)
+//julie.markIssue(scooterOne)
 //console.log(scooterOne)
