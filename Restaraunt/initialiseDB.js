@@ -1,3 +1,5 @@
+// INITIALISES DATABASE AND CREATES TABLES 
+
 const sqlite3 = require('sqlite3').verbose();
 
 function initialise() {

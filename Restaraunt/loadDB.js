@@ -1,3 +1,5 @@
+//Loaded data from the restaraunts.JSON file, loop through them and added each item to the Database 
+
 const fsp = require('fs').promises; // Node.js file system module with promises
 const sqlite3 = require('sqlite3').verbose();
 

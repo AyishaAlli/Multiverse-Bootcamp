@@ -1,3 +1,7 @@
+//Manually added data to my tables 
+//to check - Click 'view' , 'Command pallete' , type 'SQLite:Open Database' then select 
+//which database id like to open 
+
 const sqlite3 = require('sqlite3').verbose();
 
 const db = new sqlite3.Database('./restaurants.sqlite');
