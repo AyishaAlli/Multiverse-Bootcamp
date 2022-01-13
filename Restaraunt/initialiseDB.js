@@ -7,7 +7,7 @@ function initialise() {
 
     try {
         db.serialize(function () { 
-            db.run('DROP TABLE IF EXISTS RESTAURANTS')
+            //db.run('DROP TABLE IF EXISTS RESTAURANTS')
             db.run("CREATE TABLE IF NOT EXISTS RESTAURANTS (id INTEGER PRIMARY KEY AUTOINCREMENT, name TEXT, imagelink TEXT)");
             //db.run('DROP TABLE IF EXISTS MENU_ITEMS')
             db.run("CREATE TABLE IF NOT EXISTS MENUS (id INTEGER PRIMARY KEY AUTOINCREMENT,title TEXT,restaurants_id INTEGER,FOREIGN KEY (restaurants_id) REFERENCES restaurants(id));");
