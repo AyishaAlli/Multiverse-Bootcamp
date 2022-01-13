@@ -1,5 +1,6 @@
 const {sequelize} = require('../../sequelize_index');
 const {Menu} = require('../menu')
+const {MenuItem} = require('../menu_item')
 
 
 describe('Menu', () => {
@@ -17,4 +18,12 @@ describe('Menu', () => {
         const menu = await Menu.create({ title: 'Breakfast'})
         expect(menu.title).toBe('Breakfast')
     })
+
+    // test('has menu items', async () => {
+    //     const menu = await Menu.create({title: 'Breakfast'});
+    //     const menuItem = await MenuItem.create({ name: 'Sausages', price:3 });
+    //     await menu.addMenu(menuitem);
+    //     const menu_items = await restaurant.getMenuItems();
+    //     expect(menu_items[0].name).toBe('Sausages')
+    // })
 })

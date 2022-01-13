@@ -22,4 +22,4 @@ function initialise() {
     }
 }
 
-initialise()
+initialise();
