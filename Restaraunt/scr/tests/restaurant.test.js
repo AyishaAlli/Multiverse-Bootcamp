@@ -1,6 +1,6 @@
 const {sequelize} = require('../../sequelize_index');
 const {Restaurant} = require('../restaurant')
-//const {menu} = require('../menu')
+const {Menu} = require('../menu')
 //const {menu_item} = require('./menu_item')
 
 describe('Restaurant', () => {
@@ -14,8 +14,15 @@ describe('Restaurant', () => {
         await sequelize.sync({ force: true });
     })
 
-    test('can create a restaurant', async () => {
-        const restaurant = await Restaurant.create({ name: 'Ronalds', image: 'http://some.image.url' })
-        expect(restaurant.id).toBe(1)
+    // test('can create a restaurant', async () => {
+    //     const restaurant = await Restaurant.create({ name: 'Ronalds', image: 'http://some.image.url' })
+    //     expect(restaurant.id).toBe(1)
+    // })
+    test('has menus', async () => {
+        const restaurant = await Restaurant.create({ name: 'Ronalds', image: 'http://some.image.url' });
+        const menu = await Menu.create({title: 'Breakfast'});
+        await restaurant.addMenu(menu);
+        const menus = await restaurant.getMenus();
+        expect(menus[0].title).toBe('Breakfast')
     })
 })

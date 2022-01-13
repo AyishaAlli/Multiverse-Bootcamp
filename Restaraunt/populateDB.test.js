@@ -8,7 +8,7 @@ describe('restaurant test suites', function(){
 
     const db = new sqlite3.Database('./restaurants2.sqlite');
 
-    test('describe test', function (done){
+    test('checks if data has been added to database', function (done){
 
         try{
             
@@ -26,23 +26,23 @@ describe('restaurant test suites', function(){
         done()
     }
     })
+    
+    test('checks ', function (done){
 
-    // test('describe test', function (done){
-
-    //     try{
+        try{
             
-    //    db.get("SELECT count(*) as count FROM restaurants", function(err, data){
-    //        if(err){
-    //            console.log(err)
-    //        } else {
-    //            //console.log(data);
-    //            expect(data).toBe(8)
-    //        }
+       db.get("SELECT count(*) as count FROM restaurants", function(err, data){
+           if(err){
+               console.log(err)
+           } else {
+               //console.log(data);
+               expect(data.count).toBe(8)
+           }
            
-    //     })
-    // } finally {
-    //     db.close()
-    //     done()
-    // }
-    // })
+        })
+    } finally {
+        db.close()
+        done()
+    }
+    })
 })

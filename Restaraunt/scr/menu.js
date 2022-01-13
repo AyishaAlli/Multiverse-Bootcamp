@@ -5,11 +5,11 @@ class Menu extends Model {
 
 }
 Menu.init({
-    title: DataTypes.STRING,
-    restaurant_id: DataTypes.NUMBER
+    title: DataTypes.STRING
 },{
     sequelize,
     timestamps: false
 });
+
 
 module.exports = {Menu};

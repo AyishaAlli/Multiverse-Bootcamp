@@ -14,7 +14,7 @@ describe('Menu', () => {
     })
 
     test('can create a menu', async () => {
-        const menu = await Menu.create({ title: 'Breakfast', restaurant_id: '1' })
+        const menu = await Menu.create({ title: 'Breakfast'})
         expect(menu.title).toBe('Breakfast')
     })
 })

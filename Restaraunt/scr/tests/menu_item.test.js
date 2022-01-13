@@ -14,7 +14,7 @@ describe('MenuItem', () => {
     })
 
     test('can create a menu', async () => {
-        const menuItem = await MenuItem.create({ name: 'Sausage', price: 3.99,menu_id: '1' })
+        const menuItem = await MenuItem.create({ name: 'Sausage', price: 3.99 })
         expect(menuItem.id).toBe(1)
     })
 })

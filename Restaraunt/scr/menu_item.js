@@ -6,8 +6,7 @@ class MenuItem extends Model {
 }
 MenuItem.init({
     name: DataTypes.STRING,
-    price: DataTypes.NUMBER,
-    menu_id: DataTypes.NUMBER
+    price: DataTypes.NUMBER
 },{
     sequelize,
     timestamps: false
