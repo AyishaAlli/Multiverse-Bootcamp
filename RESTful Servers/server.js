@@ -25,7 +25,7 @@ app.get("/restaurants", async (req, res) => {
   /*const restaurant = await Restaurant.create({
     name: "Ronalds",
     image: "http://some.image.url",
-  }); */
+  });*/
   const restaurants = await Restaurant.findAll();
   res.json(restaurants);
 });
