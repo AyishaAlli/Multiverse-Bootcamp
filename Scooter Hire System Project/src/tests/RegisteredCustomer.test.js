@@ -1,7 +1,7 @@
-const User = require('../user');
-const DockingStation = require('../docking_station');
-const Scooter = require('../scooter');
-const RegisteredCustomer = require('../registered_customer');
+const User = require('../User');
+const DockingStation = require('../DockingStation');
+const Scooter = require('../Scooter');
+const RegisteredCustomer = require('../RegisteredCustomer');
 
 describe('registered customer', function(){
     test('creates new customer', function(){

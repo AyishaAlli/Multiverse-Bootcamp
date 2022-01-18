@@ -1,4 +1,4 @@
-const Scooter = require('./scooter')
+const Scooter = require('./Scooter')
 
 class DockingStation{
     location

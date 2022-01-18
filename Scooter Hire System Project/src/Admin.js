@@ -1,5 +1,5 @@
-const User = require('../src/User')
-const Scooter = require('../src/scooter')
+const User = require('./User')
+const Scooter = require('./Scooter')
 
 class Admin extends User {
 

@@ -1,5 +1,5 @@
 const User = require('../User')
-const Admin = require('../admin')
+const Admin = require('../Admin')
 const Scooter = require('../scooter')
 
 

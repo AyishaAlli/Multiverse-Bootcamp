@@ -1,6 +1,6 @@
-const User = require('../user');
-const Scooter = require('../scooter')
-const Maintenance = require('../maintenance');
+const User = require('../User');
+const Scooter = require('../Scooter')
+const Maintenance = require('../Maintenance');
 
 describe('Maintenance', function(){
     test('creates a new employee', function(){

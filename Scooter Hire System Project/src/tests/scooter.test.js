@@ -1,5 +1,5 @@
 const { TestWatcher } = require("jest")
-const Scooter = require("../scooter");
+const Scooter = require("../Scooter");
 
 
 describe('', function(){

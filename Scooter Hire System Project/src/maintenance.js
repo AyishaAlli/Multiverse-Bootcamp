@@ -1,5 +1,5 @@
-const User = require('./user')
-const Scooter = require('./scooter')
+const User = require('./User')
+const Scooter = require('./Scooter')
 
 class Maintenance extends User{
 

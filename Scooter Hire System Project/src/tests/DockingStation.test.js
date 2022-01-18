@@ -1,5 +1,5 @@
-const DockingStation = require('../docking_station');
-const Scooter = require('../scooter');
+const DockingStation = require('../DockingStation');
+const Scooter = require('../Scooter');
 
 describe('docking station', function(){
     test('check if space is available ', function (){

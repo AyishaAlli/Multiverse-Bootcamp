@@ -1,5 +1,5 @@
-const User = require('./user');
-const DockingStation = require('./docking_station');
+const User = require('./User');
+const DockingStation = require('./DockingStation');
 
 
 class Scooter {

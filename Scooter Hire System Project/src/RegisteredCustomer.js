@@ -1,6 +1,6 @@
 const User = require('./User');
-const DockingStation = require('./docking_station');
-const Scooter = require('./scooter');
+const DockingStation = require('./DockingStation');
+const Scooter = require('./Scooter');
 
 class RegisteredCustomer extends User{
     email;
