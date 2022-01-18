@@ -4,7 +4,7 @@ class MenuItem extends Model {}
 MenuItem.init(
   {
     name: DataTypes.STRING,
-    price: DataTypes.NUMBER,
+    price: DataTypes.INTEGER,
   },
   {
     sequelize,

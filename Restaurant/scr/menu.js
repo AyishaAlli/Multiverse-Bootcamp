@@ -1,5 +1,5 @@
 const { sequelize, DataTypes, Model } = require("../sequelize_index");
-const { MenuItem } = require("./menu_item");
+const { MenuItem } = require("./MenuItem");
 
 class Menu extends Model {}
 Menu.init(
@@ -12,7 +12,7 @@ Menu.init(
   }
 );
 
-Menu.hasMany(MenuItem, { as: "menu_items", foreignKey: "menu_id" });
+Menu.hasMany(MenuItem, { as: "menuItems", foreignKey: "menu_id" });
 MenuItem.belongsTo(Menu, { foreignKey: "menu_id" });
 
 module.exports = { Menu };
