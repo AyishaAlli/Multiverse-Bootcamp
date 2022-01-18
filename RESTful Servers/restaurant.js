@@ -1,5 +1,5 @@
 const { sequelize, DataTypes, Model } = require("./sequelize_index");
-const { Menu } = require("./menu");
+const { Menu } = require("./Menu");
 
 class Restaurant extends Model {}
 Restaurant.init(

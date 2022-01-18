@@ -4,6 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
+    "start": "nodemon server.js",
     "test": "jest",
     "test:report": "jest --coverage=true"
   },
@@ -12,6 +13,7 @@
   "dependencies": {
     "express": "^4.17.2",
     "jest": "^27.4.7",
+    "nodemon": "^2.0.15",
     "sequelize": "^6.13.0",
     "sqlite": "^4.0.23",
     "sqlite3": "^5.0.2"

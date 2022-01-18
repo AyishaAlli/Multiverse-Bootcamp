@@ -1,6 +1,6 @@
 const {sequelize} = require('./sequelize_index');
-const {Restaurant} = require('./restaurant')
-const {Menu} = require('./menu')
+const {Restaurant} = require('./Restaurant')
+const {Menu} = require('./Menu')
 //const {menu_item} = require('./menu_item')
 
 describe('Restaurant', () => {
