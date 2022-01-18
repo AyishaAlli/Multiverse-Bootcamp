@@ -2,6 +2,7 @@ FILE: server.js
 
 TODO
 check that the input for the restaurant name contains only characters which appear in a whitelist
+find out how to do a PATCH request 
 
 QUESTIONS 
 Line 39 : What can I replace escape() with if its now depreciated? 
