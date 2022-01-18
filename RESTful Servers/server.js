@@ -1,5 +1,6 @@
 const { response } = require("express");
-const express = require("express"); //
+const express = require("express");
+const { check, validationResult } = require("express-validator");
 
 const app = express(); // Creates Server
 const port = 3000; // Sets port to 3000
@@ -13,23 +14,8 @@ app.use(express.json());
 
 app.use(express.static("public")); // Gets code from folder called public
 
-//Creates End Point for flipping a coin
-// app.get("/flipcoin", (request, response) => {
-//   const random = Math.floor(Math.random() * 2);
-//   if (random === 1) {
-
-//     response.send("Heads");
-//   } else {
-//     response.send("Tails");
-//   }
-// });
-
 // creating endpoint for searching all restaurants
 app.get("/restaurants", async (req, res) => {
-  /*const restaurant = await Restaurant.create({
-    name: "Ronalds",
-    image: "http://some.image.url",
-  });*/
   const restaurants = await Restaurant.findAll();
   res.json(restaurants);
 });
