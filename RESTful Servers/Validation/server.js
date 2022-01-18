@@ -29,7 +29,6 @@ app.get("/restaurants/:id", async (req, res) => {
 //New endpoint to listen to CREATE a restaurant
 app.post(
   "/restaurants",
-  //What can I replace escape() with since its now depreciated?
   [
     check("name")
       .exists()
@@ -57,14 +56,30 @@ app.post(
 );
 
 //New endpoint to listen to UPDATE requests
-app.put("/restaurants/:id", async (req, res) => {
-  const data = await Restaurant.update(req.body, {
-    where: {
-      id: req.params.id,
-    },
-  });
-  res.sendStatus(201).json(data);
-});
+app.put(
+  "/restaurants/:id",
+  [check("id").isNumeric().withMessage("Please enter a number")],
+  [
+    check("name")
+      .isLength({ max: 50 })
+      .withMessage("Must be less than 50 Characters")
+      .trim()
+      .escape(),
+  ],
+  [check("image").isURL().withMessage("Invalid URL")],
+  async (req, res) => {
+    const errors = validationResult(req);
+    if (!errors.isEmpty()) {
+      return res.status(400).json({ errors: errors.array() });
+    }
+    const data = await Restaurant.update(req.body, {
+      where: {
+        id: req.params.id,
+      },
+    });
+    res.sendStatus(201).json(data);
+  }
+);
 
 //New endpoint to listen to DELETE requests
 app.delete("/restaurants/:id", async (req, res) => {
@@ -76,6 +91,3 @@ app.listen(port, () => {
   /*Listens out for that code and displays it on the webpage below */
   console.log(`Server listening at http://localhost:${port}`);
 });
-
-//TODO
-// check that the input for the restaurant name contains only characters which appear in a whitelist
