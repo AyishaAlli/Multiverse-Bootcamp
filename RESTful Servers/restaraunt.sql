@@ -71,8 +71,6 @@ FROM restaurants
 INNER JOIN menus ON restaurants.id = menus.restaurants_id
 GROUP BY restaurants.name;
 
-SELECT id, title, restaurant_id
- FROM Menus AS `Menu` WHERE `Menu`.`restaurant_id` = ':1';
 
 -- Select all the menus, with the total cost of all the menu items summed. In descending order 
 

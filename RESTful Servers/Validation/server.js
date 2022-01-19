@@ -1,6 +1,7 @@
 const { response } = require("express");
 const express = require("express");
 const { check, validationResult } = require("express-validator");
+const res = require("express/lib/response");
 
 const app = express(); // Creates Server
 const port = 3000; // Sets port to 3000
