@@ -88,6 +88,55 @@ app.delete("/restaurants/:id", async (req, res) => {
   res.sendStatus(201).json(data);
 });
 
+//INNER JOINS
+
+// Get specific restaurant and its menus menu
+app.get("/restaurants/:id/menus", async (req, res) => {
+  const restaurants = await Restaurant.findAll({
+    include: [
+      {
+        model: Menu,
+        as: "menus",
+        where: { restaurant_id: req.params.id },
+      },
+    ],
+  });
+  res.json(restaurants);
+});
+
+// // Update Menu on specific restaurant
+app.put("/restaurants/:id/menus/:menuid", async (req, res) => {
+  const menu = await Menu.update(req.body, {
+    where: {
+      id: req.params.menuid,
+    },
+  });
+  res.json(menu);
+});
+
+//Menus and Menu Items for specific restaurant
+app.get("/restaurants/:id/menus/menuitems", async (req, res) => {
+  const restaurants = await Restaurant.findAll({
+    include: [
+      {
+        model: Menu,
+        as: "menus",
+        where: {
+          restaurant_id: req.params.id,
+        },
+        include: [
+          {
+            model: MenuItem,
+            as: "menuItems",
+            required: true,
+          },
+        ],
+      },
+    ],
+  });
+  res.json(restaurants);
+});
+
 app.listen(port, () => {
   /*Listens out for that code and displays it on the webpage below */
   console.log(`Server listening at http://localhost:${port}`);
