@@ -1,5 +1,4 @@
-# Scooter Hire System 
-
+# Scooter Hire System
 
 ### The challenge
 
@@ -16,12 +15,6 @@ Users should be able to:
 - A scooter can be marked by a user as broken. This must remove the scooter from a list of available scooters and trigger maintenance personnel to repair the scooter
 - The maximum range of a fully charged scooter is 32 km
 
-
-
 ### Built with
 
-- JavaScript
-
-
-
-
+- JavaScript ( There is also a TypeScript Version)
