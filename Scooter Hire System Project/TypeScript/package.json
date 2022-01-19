@@ -1,5 +1,5 @@
 {
-  "name": "scooter-hire-system-project",
+  "name": "typescript",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
@@ -7,9 +7,9 @@
     "test": "tests"
   },
   "scripts": {
-    "test": "jest",
-    "test:report": "jest --coverage=true"
+    "test": "jest"
   },
+  "keywords": [],
   "author": "",
   "license": "ISC",
   "dependencies": {
