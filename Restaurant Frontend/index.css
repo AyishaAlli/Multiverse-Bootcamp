@@ -1,0 +1,108 @@
+@import url("https://fonts.googleapis.com/css2?family=Oswald:wght@200;400&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-boxs;
+  font-family: "Oswald", sans-serif;
+  font-weight: 400;
+}
+
+body a {
+  text-decoration: none;
+  color: black;
+}
+
+
+header h1 {
+  text-align: center;
+  font-family: "Oswald", sans-serif;
+  font-size: 70px;
+  font-weight: 600;
+  padding: 20px;
+}
+/* Container for restaurants */
+.container {
+  background-color: lightgrey;
+  
+  padding: 20px;
+}
+/*ADD RESTAURANT*/
+.userOptions {
+  text-align: center;
+  background-color: transparent;
+  padding: 10px;
+  margin-top: 200px;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.userOptions button {
+  background-color: transparent;
+  padding: 5px;
+  font-size: 30px;
+  border: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 20px;
+}
+button:hover{
+  color: blue;
+}
+/* RESTAURANT CARDS */
+.restContainer {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-around;
+  width: 75%;
+  margin: auto;
+}
+
+/*HOVER EFFECT WITH RESTAURANT IMAGES */
+figure{
+  margin-top: 30px;
+}
+figcaption {
+  text-align: center;
+}
+.imgContainer {
+  position: relative;
+  text-align: center;
+}
+
+.imgContainer:hover img {
+  opacity: 0.3;
+}
+
+.imgContainer:hover .middle {
+  opacity: 1;
+}
+
+figure img {
+  border: 1px solid transparent;
+  border-radius: 40px;
+  opacity: 1;
+  display: block;
+  height: auto;
+  transition: 0.5s ease;
+  backface-visibility: hidden;
+}
+.middle {
+  transition: 0.5s ease;
+  opacity: 0;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  text-align: center;
+}
+.middle .text {
+  background-color: white;
+  color: black;
+  font-size: 16px;
+  padding: 16px 32px;
+}
