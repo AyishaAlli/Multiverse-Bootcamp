@@ -1,0 +1,183 @@
+@import url("https://fonts.googleapis.com/css2?family=Oswald:wght@200;400&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-boxs;
+  font-family: "Oswald", sans-serif;
+  font-weight: 400;
+}
+
+body {
+  background-color: #f9f9fd;
+  background: radial-gradient(circle, transparent 20%, #f9f9fd 20%, #f9f9fd 80%, transparent 80%, transparent), radial-gradient(circle, transparent 20%, #f9f9fd 20%, #f9f9fd 80%, transparent 80%, transparent) 67.5px 67.5px, linear-gradient(#8ee8ff 5.4px, transparent 5.4px) 0 -2.7px, linear-gradient(90deg, #8ee8ff 5.4px, #f9f9fd 5.4px) -2.7px 0;
+  background-size: 135px 135px, 135px 135px, 67.5px 67.5px, 67.5px 67.5px;
+  background-attachment: fixed;
+}
+  
+body a {
+  text-decoration: none;
+  color: black;
+}
+
+/* NAVIGATION  */
+nav {
+  display: flex;
+  justify-content: space-between;
+  padding: 10px;
+  align-items: center;
+}
+nav a:hover{
+color: #30aac9;
+cursor: pointer;
+}
+
+header h1 {
+  text-align: center;
+  font-family: "Oswald", sans-serif;
+  font-size: 40px;
+  font-weight: 600;
+}
+/* Container for restaurants */
+/* GLOBAL STYLING  */
+.userOptions, input[type=text], .searchContainer button{
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}
+
+/*ADD RESTAURANT*/
+.userOptions {
+  text-align: center;
+  background-color: transparent;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  width: 90%;
+  margin: auto;
+  border:2px solid transparent;
+  border-radius: 20px;
+  margin-top: 50px;
+  margin-bottom: 100px;
+  
+  background-color: #30aac9;
+}
+
+.userOptions button {
+  background-color: transparent;
+  padding: 5px;
+  font-size: 30px;
+  border: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 20px;
+  
+}
+.userOptions button i {
+  margin-left: 10px;
+
+}
+button:hover {
+  color: white;
+}
+
+/* SEARCH BAR */
+.container {
+  text-align: center; 
+}
+
+.searchContainer{
+  width: 90%;
+  margin:auto;
+  background-color: #30aac9;
+  border-top-left-radius: 20px;
+  border-top-right-radius: 20px;
+  padding-top: 20px;
+  
+}
+
+input[type=text] {
+  padding: 10px;
+  border: none;
+  font-size: 17px;
+}
+
+.searchContainer button {
+  padding: 10px;
+  margin-top: 8px;
+  background: #ddd;
+  font-size: 17px;
+  border: none;
+  cursor: pointer;
+  margin-right: 20px;
+}
+
+/* RESTAURANT CARDS */
+
+.restContainer {
+  width: 90%;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-around;
+  margin: auto;
+  background-color: #30aac9;
+  border: 0px solid transparent;
+  border-bottom-left-radius: 20px;
+  border-bottom-right-radius: 20px;
+  padding-bottom: 30px;
+}
+
+/*HOVER EFFECT WITH RESTAURANT IMAGES */
+figure {
+  margin-top: 30px;
+}
+figcaption {
+  text-align: center;
+}
+/*
+.imgContainer {
+  position: relative;
+  text-align: center;
+}
+
+.imgContainer:hover img {
+  opacity: 0.3;
+}
+
+.imgContainer:hover .middle {
+  opacity: 1;
+}
+
+figure img {
+  border: 1px solid transparent;
+  border-radius: 40px;
+  opacity: 1;
+  display: block;
+  height: auto;
+  transition: 0.5s ease;
+  backface-visibility: hidden;
+}
+.middle {
+  transition: 0.5s ease;
+  opacity: 0;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  text-align: center;
+}
+.middle .text {
+  background-color: white;
+  color: black;
+  font-size: 16px;
+  padding: 16px 32px;
+}
+(
+
+/* FOOTER */
+footer{
+  text-align: center;
+  padding: 50px;
+  text-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}

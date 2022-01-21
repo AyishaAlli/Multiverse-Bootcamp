@@ -7,7 +7,7 @@
   font-family: "Oswald", sans-serif;
   font-weight: 400;
 }
-
+/* Background picture */
 body {
   background-color: #f9f9fd;
   background: radial-gradient(
@@ -32,28 +32,50 @@ body {
   background-size: 135px 135px, 135px 135px, 67.5px 67.5px, 67.5px 67.5px;
   background-attachment: fixed;
 }
-
-header h1 {
+/* Top Section */
+section {
+  padding: 10px;
+}
+section h1 {
   text-align: center;
   font-family: "Oswald", sans-serif;
   font-size: 40px;
   font-weight: 600;
 }
-header i {
-    color: black;
+section .fa-arrow-left {
+  color: black;
+}
+section .fa-pencil-alt {
+  font-size: 30px;
 }
 
-
-.infoBoxes {
-    display: flex;
-    flex-wrap: wrap;
-    
-    justify-content: center;
-    align-items: center;
-
-    margin: auto;
-    background-color: green;
+/* Restaurant Information */
+.container {
+  text-align: center;
+  background-color: #63d1ec;
+  border: 0px solid transparent;
+  padding: 20px;
+  width: 650px;
+  margin: auto;
+  border-radius: 20px;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
 }
-.infoBox{
-    width: 50%;
+.infoBox {
+  width: 50%;
+}
+.menu {
+  text-decoration: underline;
+}
+.menu:hover {
+  color: blue;
+  cursor: pointer;
+}
+
+/* Hide and show menu items  */
+.hidden {
+  display: none;
+}
+
+ul li {
+  list-style: none;
 }
