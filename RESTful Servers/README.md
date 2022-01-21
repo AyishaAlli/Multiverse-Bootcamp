@@ -12,3 +12,8 @@ Packages Used:
 ## Useful Websites 
 
 [https://www.npmjs.com/package/@handlebars/allow-prototype-access]
+
+Questions/Todo's
+How to post form?
+Deleting messes with autoincrements 
+cant get restaurant.css or restaurant.js onto my restaurant page 

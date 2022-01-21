@@ -29,29 +29,48 @@ app.set("view engine", "handlebars");
 
 app.use(express.static("public")); // Gets code from folder called public. Things like js and cc files will go in here
 
+//ENDPOINTS WITH HANDLEBARS RENDERING DATA AND FEEDING TO VIEWS FOLDER
 
-//ENDPOINTS WITH HANDLEBARS RENDERING DATA AND FEEDING TO VIEWS FOLDER 
-
-//All Restaurants 
+//All Restaurants
 app.get("/restaurants", async (req, res) => {
   const restaurants = await Restaurant.findAll();
   //res.json(restaurants); works but gives an error
   res.render("restaurants", { restaurants });
 });
 
+// Restaurants + menus + menu items
+app.get("/restaurants/:id", async (req, res) => {
+  const restaurants = await Restaurant.findAll({
+    include: [
+      {
+        model: Menu,
+        as: "menus",
+        where: {
+          restaurant_id: req.params.id,
+        },
+        include: [
+          {
+            model: MenuItem,
+            as: "menuItems",
+            required: true,
+          },
+        ],
+      },
+    ],
+  });
+  res.render("restaurant", { restaurants });
+});
+//EXAMPLE : searching all restaurants -  As JSON file (Before handlebars)
+// app.get("/restaurants", async (req, res) => {
+//   const restaurants = await Restaurant.findAll();
+//   res.send(restaurants); // returns RAW JSON
+// });
+
 //search each restaurant by ID
 app.get("/restaurants/:id", async (req, res) => {
   const restaurant = await Restaurant.findByPk(req.params.id);
   res.send(restaurant);
 });
-
-//EXAMPLE : searching all restaurants -  As JSON file (Before handlebars)
-// app.get("/restaurants", async (req, res) => {
-//   const restaurants = await Restaurant.findAll();
-//   res.send(restaurants); // returns RAW JSON 
-// });
-
-
 
 //New endpoint to listen to CREATE a restaurant
 app.post("/restaurants", async (req, res) => {
@@ -102,27 +121,27 @@ app.put("/restaurants/:id/menus/:menuid", async (req, res) => {
 });
 
 //Menus and Menu Items for specific restaurant
-app.get("/restaurants/:id/menus/menuitems", async (req, res) => {
-  const restaurants = await Restaurant.findAll({
-    include: [
-      {
-        model: Menu,
-        as: "menus",
-        where: {
-          restaurant_id: req.params.id,
-        },
-        include: [
-          {
-            model: MenuItem,
-            as: "menuItems",
-            required: true,
-          },
-        ],
-      },
-    ],
-  });
-  res.send(restaurants);
-});
+// app.get("/restaurants/:id/menus/menuitems", async (req, res) => {
+//   const restaurants = await Restaurant.findAll({
+//     include: [
+//       {
+//         model: Menu,
+//         as: "menus",
+//         where: {
+//           restaurant_id: req.params.id,
+//         },
+//         include: [
+//           {
+//             model: MenuItem,
+//             as: "menuItems",
+//             required: true,
+//           },
+//         ],
+//       },
+//     ],
+//   });
+//   res.send(restaurants);
+// });
 
 app.listen(port, () => {
   /*Listens out for that code and displays it on the webpage below */

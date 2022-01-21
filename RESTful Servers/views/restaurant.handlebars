@@ -4,9 +4,60 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title></title>
+    <link rel="stylesheet" href="css/restaurant.css">
+    <script src="https://kit.fontawesome.com/97364d0a43.js" crossorigin="anonymous"></script>
 </head>
 <body>
-    
+        {{#each restaurants}}
+    <section>
+        <a href="/restaurant.html"><i class="fas fa-2x fa-arrow-left"></i></a>
+        <h1 class="restName">{{this.name}}<i class="fas fa-pencil-alt"></i></h1>
+    </section>
+    <section class="editForm">
+        <i class="fas fa-2x fa-times"></i>
+        <form action="" method="post">
+            <div>
+                <label for="name">Restaurant Name</label>
+                <input type="text" name="name" id="name" value="{{this.name}}">
+            </div>
+            <div>
+                <label for="imageURL">Image Link (URL)</label>
+                <input type="url" name="imageURL" id="imageURL" value="{{this.image}}">
+            </div>
+            {{#each menus}}
+            <div>
+                <label for="menuName">Menu Name</label>
+                <input type="text" name="menuName" id="menuName" value="{{this.title}}">
+            </div>
+            {{#each menuItems}}
+            <div> 
+                <label for="menuItem">Item</label>
+                <input type="text" name="menuItem" id="menuItem" value="{{this.name}}">
+                <input type="text" name="menuItem" id="menuItem" value="{{this.price}}">
+            </div>
+             {{/each}}
+            {{/each}}
+         <input type="submit" value="Submit Details">
+        </form>
+        
+    </section>
+        {{/each}}
+    </header>
+    <div class="container">
+        <figure>
+            <img src="https://glowconnect.org.uk/wp-content/uploads/2020/04/placeholder.png" width="570" height="500" alt="">
+            <figcaption>
+                <p class="menu">{{this.title}}</p>
+                <ul class="menuItems hidden">
+                    <li>Menu-Item</li>
+                    <li>Menu-Item</li>
+                    <li>Menu-Item</li>
+                    <li>Menu-Item</li>
+                </ul>
+            </figcaption>
+        </figure>
+    </div>
+    <script src="js/restaurant.js"></script>
 </body>
 </html>
