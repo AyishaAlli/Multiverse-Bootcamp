@@ -1,19 +1,18 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title></title>
-    <link rel="stylesheet" href="css/restaurant.css">
-    <script src="https://kit.fontawesome.com/97364d0a43.js" crossorigin="anonymous"></script>
-</head>
+
 <body>
+    <header>
+      <nav>
+        <h1>RestoDirect</h1>
+       <a href="#">CONTACT</a>
+      </nav>
+    </header>
+
         {{#each restaurants}}
     <section>
         <a href="/restaurants"><i class="fas fa-2x fa-arrow-left"></i></a>
         <h1 class="restName">{{this.name}}<i class="fas fa-pencil-alt"></i></h1>
     </section>
+    
     <section class="editForm">
         <i class="fas fa-2x fa-times"></i>
         <form action="" method="post">
@@ -32,32 +31,37 @@
             </div>
             {{#each menuItems}}
             <div> 
-                <label for="menuItem">Item</label>
+                <label for="menuItem">Item + Price</label>
                 <input type="text" name="menuItem" id="menuItem" value="{{this.name}}">
                 <input type="text" name="menuItem" id="menuItem" value="{{this.price}}">
             </div>
              {{/each}}
             {{/each}}
          <input type="submit" value="Submit Details">
-        </form>
+        </form> 
         
     </section>
-        {{/each}}
-    </header>
+
     <div class="container">
         <figure>
-            <img src="https://glowconnect.org.uk/wp-content/uploads/2020/04/placeholder.png" width="570" height="500" alt="">
+            <img src="{{this.image}}" width="570" height="500" alt="">
             <figcaption>
+            {{#each menus}}
                 <p class="menu">{{this.title}}</p>
-                <ul class="menuItems hidden">
-                    <li>Menu-Item</li>
-                    <li>Menu-Item</li>
-                    <li>Menu-Item</li>
-                    <li>Menu-Item</li>
+                <ul class="menuItems hidden" id="{{this.id}}">
+                    {{#each menuItems}}
+                    <li>{{this.name}} £{{this.price}}</li>
+               {{/each}}
                 </ul>
+                <br>
+            {{/each}}
             </figcaption>
         </figure>
     </div>
-    <script src="js/restaurant.js"></script>
+    <script src="js/restaurant.js"></script> 
+    {{/each}}
+
+
+
 </body>
-</html>
+

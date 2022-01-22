@@ -7,6 +7,24 @@
   font-family: "Oswald", sans-serif;
   font-weight: 400;
 }
+/* NAVIGATION  */
+nav {
+  display: flex;
+  justify-content: space-between;
+  padding: 10px;
+  align-items: center;
+}
+nav a:hover{
+color: #30aac9;
+cursor: pointer;
+}
+
+header h1 {
+  text-align: center;
+  font-family: "Oswald", sans-serif;
+  font-size: 40px;
+  font-weight: 600;
+}
 /* Background picture */
 body {
   background-color: #f9f9fd;
@@ -47,7 +65,6 @@ section h1 {
 }
 section .fa-arrow-left {
   color: black;
-  
 }
 section .fa-pencil-alt {
   font-size: 30px;
@@ -86,13 +103,12 @@ ul li {
 /* FORM */
  .editForm{
   display: none;
-} 
+}  
 
-.editForm i{
+.editForm i {
   position: absolute;
   right: 0;
   margin-right: 10px;
-  
 }
 
 form {
@@ -114,61 +130,58 @@ input {
   width: 300px;
   border: none;
   font-size: 17px;
-  border:2px solid;
+  border: 2px solid;
   border-radius: 20px;
   box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
 }
-input[type=submit]{
+input[type="submit"] {
   width: 200px;
   margin-top: 10px;
   background-color: #8ee8ff;
-  
 }
 .editForm {
   position: absolute;
-  left: 0; 
-  right: 0; 
-  margin-left: auto; 
-  margin-right: auto; 
+  left: 0;
+  right: 0;
+  margin-left: auto;
+  margin-right: auto;
   width: 500px;
-  height: 75%;
-border: 2px solid ;
-background-color: white;
+
+  border: 2px solid;
+  background-color: white;
 }
 
 @media only screen and (max-width: 800px) {
-  .editForm{
-    left: 0; 
-  right: 0; 
-  margin-left: auto; 
-  margin-right: auto; 
-  width: 350px;
-  height: 75%;
-
+  .editForm {
+    left: 0;
+    right: 0;
+    margin-left: auto;
+    margin-right: auto;
+    width: 350px;
+    
   }
-  .container{
+  .container {
     width: 500px;
   }
-  .container img{
+  .container img {
     width: 400px;
     height: 350px;
   }
 }
 
 @media only screen and (max-width: 500px) {
-  .container{
+  .container {
     width: 300px;
   }
-  .container img{
+  .container img {
     width: 250px;
     height: 200px;
   }
-  .editForm{
-    height: 480px;
+  .editForm {
+    
     width: 350px;
-   
   }
-  form div{
+  form div {
     margin: 5px;
   }
 }

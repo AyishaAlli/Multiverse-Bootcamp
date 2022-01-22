@@ -35,7 +35,7 @@ app.use(express.static("public")); // Gets code from folder called public. Thing
 app.get("/restaurants", async (req, res) => {
   const restaurants = await Restaurant.findAll();
   //res.json(restaurants); works but gives an error
-  res.render("restaurants", { restaurants });
+  res.render("restaurants", { restaurants, style: "style.css" });
 });
 
 // Restaurants + menus + menu items
@@ -58,7 +58,7 @@ app.get("/restaurants/:id", async (req, res) => {
       },
     ],
   });
-  res.render("restaurant", { restaurants });
+  res.render("restaurant", { restaurants, style: "restaurant.css" });
 });
 //EXAMPLE : searching all restaurants -  As JSON file (Before handlebars)
 // app.get("/restaurants", async (req, res) => {
@@ -148,4 +148,7 @@ app.listen(port, () => {
   console.log(`Server listening at http://localhost:${port}`);
 });
 
-// ISSUE = Showing obejects but not what is in the object untill i do res.json(reastaurants) but that presents an errow
+
+
+
+
