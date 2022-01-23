@@ -13,12 +13,15 @@ const {
   allowInsecurePrototypeAccess,
 } = require("@handlebars/allow-prototype-access"); // prototype access so i can see my templates. Shouldnt be used in real project
 
+
 const app = express(); // Creates Server
 const port = 3000; // Sets port to 3000
 
 //Middleware so that Express can read JSON and URL encoded request bodies. Needed for POST and PUT requests
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json()); // recognises incomijng requests as a JSON objest
+
+
 
 //Middleware for handlebars configuration
 app.engine(
@@ -31,11 +34,15 @@ app.use(express.static("public")); // Gets code from folder called public. Thing
 
 //ENDPOINTS WITH HANDLEBARS RENDERING DATA AND FEEDING TO VIEWS FOLDER
 
-//All Restaurants
+//All Restaurants - Homepage
 app.get("/restaurants", async (req, res) => {
   const restaurants = await Restaurant.findAll();
   //res.json(restaurants); works but gives an error
-  res.render("restaurants", { restaurants, style: "style.css" });
+  res.render("restaurants", {
+    restaurants,
+    style: "style.css",
+    title: "RestoDirect ",
+  });
 });
 
 // Restaurants + menus + menu items
@@ -58,7 +65,11 @@ app.get("/restaurants/:id", async (req, res) => {
       },
     ],
   });
-  res.render("restaurant", { restaurants, style: "restaurant.css" });
+  res.render("restaurant", {
+    restaurants,
+    style: "restaurant.css",
+    title: "Restaurant",
+  });
 });
 //EXAMPLE : searching all restaurants -  As JSON file (Before handlebars)
 // app.get("/restaurants", async (req, res) => {
@@ -79,14 +90,27 @@ app.post("/restaurants", async (req, res) => {
 });
 
 //New endpoint to listen to UPDATE requests
+
 app.put("/restaurants/:id", async (req, res) => {
   const restaurant = await Restaurant.update(req.body, {
     where: {
       id: req.params.id,
     },
   });
-  res.send(restaurant);
+  res.render("restaurants", {
+    restaurant,
+    style: "style.css",
+    title: "RestoDirect ",
+  });
 });
+// app.put("/restaurants/:id", async (req, res) => {
+//   const restaurant = await Restaurant.update(req.body, {
+//     where: {
+//       id: req.params.id,
+//     },
+//   });
+//   res.send(restaurant);
+// });
 
 //New endpoint to listen to DELETE requests
 app.delete("/restaurants/:id", async (req, res) => {
@@ -147,8 +171,3 @@ app.listen(port, () => {
   /*Listens out for that code and displays it on the webpage below */
   console.log(`Server listening at http://localhost:${port}`);
 });
-
-
-
-
-
