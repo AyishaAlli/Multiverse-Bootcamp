@@ -17,43 +17,43 @@
         <section class="forms hidden">
         <i class="fas fa-2x fa-times"></i>
         <i class="fas fa-2x fa-arrow-left" id="exitForm"></i>
-        <form action="" method="post" class="restaurantDetails hidden">
-            <div>
+        <form class="restaurantDetails hidden">
                 <label for="name">Restaurant Name</label>
                 <input type="text" name="name" id="name" value="{{this.name}}">
-            </div>
-            <div>
+                <br>
                 <label for="imageURL">Image Link (URL)</label>
                 <input type="url" name="imageURL" id="imageURL" value="{{this.image}}">
-            </div>
          <input type="submit" value="Submit Details">
           </form>
 
-        <form action="" method="post" class=" restaurantMenus hidden">
+        <form class=" restaurantMenus hidden">
             {{#each menus}}
-            <div>
                 <label for="menuName">Menu Name</label>
                 <input type="text" name="menuName" id="menuName" value="{{this.title}}">
-            </div>
+                <br>
             {{/each}}
+            <button><i class="fas fa-plus-circle"></i></button>
          <input type="submit" value="Submit Details">
-         
         </form> 
 
-        {{!-- <form action="" method="post" class=" restaurantMenuItems hidden">
-            {{#each menus}}
-                <p>{{this.title}}</p>
-            <div>
+        <form class=" restaurantMenuItems hidden">
+            <div id="menuItemsContainer">
+                {{#each menus}}
+                <p style="text-decoration: underline; color:#63d1ec">{{this.title}}</p>
             {{#each menuItems}}
                 <label for="menuItem">Menu Item + Price</label>
                 <input type="text" name="menuName" id="menuName" value="{{this.name}}">
                 <input type="text" name="menuName" id="menuName" value="{{this.price}}">
+              <br>
+            {{/each}}
+            {{/each}}
             </div>
-            {{/each}}
-            {{/each}}
+            
+            <button type="button"><i class="fas fa-plus-circle" id="addMenuItem"></i></button>
          <input type="submit" value="Submit Details">
          
-        </form>  --}}
+        </form> 
+
         </section>
 
         <div class="editBtns">
@@ -83,6 +83,7 @@
         </figure>
     </div>
     <script src="js/restaurant.js"></script> 
+    <script src="js/restaurantCRUD.js"></script> 
     {{/each}}
 
 

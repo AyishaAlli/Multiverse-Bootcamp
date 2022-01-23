@@ -13,15 +13,12 @@ const {
   allowInsecurePrototypeAccess,
 } = require("@handlebars/allow-prototype-access"); // prototype access so i can see my templates. Shouldnt be used in real project
 
-
 const app = express(); // Creates Server
 const port = 3000; // Sets port to 3000
 
 //Middleware so that Express can read JSON and URL encoded request bodies. Needed for POST and PUT requests
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json()); // recognises incomijng requests as a JSON objest
-
-
 
 //Middleware for handlebars configuration
 app.engine(
@@ -37,7 +34,6 @@ app.use(express.static("public")); // Gets code from folder called public. Thing
 //All Restaurants - Homepage
 app.get("/restaurants", async (req, res) => {
   const restaurants = await Restaurant.findAll();
-  //res.json(restaurants); works but gives an error
   res.render("restaurants", {
     restaurants,
     style: "style.css",
@@ -171,3 +167,5 @@ app.listen(port, () => {
   /*Listens out for that code and displays it on the webpage below */
   console.log(`Server listening at http://localhost:${port}`);
 });
+
+// Doesnt effect my restaurants.json file, how comes?

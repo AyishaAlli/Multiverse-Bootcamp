@@ -76,3 +76,6 @@ closeModal.addEventListener("click", () => {
   restaurantDetailsForm.classList.add("hidden");
   form.style.display = "none";
 });
+
+
+// CLOSE BTN NEEDS TO BE SHOWING ON EDIT FORM BUTTONS SCREEN
