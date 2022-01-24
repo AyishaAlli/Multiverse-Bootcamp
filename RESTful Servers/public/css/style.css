@@ -10,11 +10,29 @@
 
 body {
   background-color: #f9f9fd;
-  background: radial-gradient(circle, transparent 20%, #f9f9fd 20%, #f9f9fd 80%, transparent 80%, transparent), radial-gradient(circle, transparent 20%, #f9f9fd 20%, #f9f9fd 80%, transparent 80%, transparent) 67.5px 67.5px, linear-gradient(#8ee8ff 5.4px, transparent 5.4px) 0 -2.7px, linear-gradient(90deg, #8ee8ff 5.4px, #f9f9fd 5.4px) -2.7px 0;
+  background: radial-gradient(
+      circle,
+      transparent 20%,
+      #f9f9fd 20%,
+      #f9f9fd 80%,
+      transparent 80%,
+      transparent
+    ),
+    radial-gradient(
+        circle,
+        transparent 20%,
+        #f9f9fd 20%,
+        #f9f9fd 80%,
+        transparent 80%,
+        transparent
+      )
+      67.5px 67.5px,
+    linear-gradient(#8ee8ff 5.4px, transparent 5.4px) 0 -2.7px,
+    linear-gradient(90deg, #8ee8ff 5.4px, #f9f9fd 5.4px) -2.7px 0;
   background-size: 135px 135px, 135px 135px, 67.5px 67.5px, 67.5px 67.5px;
   background-attachment: fixed;
 }
-  
+
 body a {
   text-decoration: none;
   color: black;
@@ -27,9 +45,9 @@ nav {
   padding: 10px;
   align-items: center;
 }
-nav a:hover{
-color: #30aac9;
-cursor: pointer;
+nav a:hover {
+  color: #30aac9;
+  cursor: pointer;
 }
 
 header h1 {
@@ -40,7 +58,9 @@ header h1 {
 }
 /* Container for restaurants */
 /* GLOBAL STYLING  */
-.userOptions, input[type=text], .searchContainer button{
+.userOptions,
+.searchBox,
+.searchContainer button {
   box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
 }
 
@@ -53,11 +73,11 @@ header h1 {
   flex-wrap: wrap;
   width: 90%;
   margin: auto;
-  border:2px solid transparent;
+  border: 2px solid transparent;
   border-radius: 20px;
   margin-top: 50px;
   margin-bottom: 100px;
-  
+
   background-color: #30aac9;
 }
 
@@ -70,11 +90,9 @@ header h1 {
   justify-content: center;
   align-items: center;
   margin: 20px;
-  
 }
 .userOptions button i {
   margin-left: 10px;
-
 }
 button:hover {
   color: white;
@@ -82,20 +100,19 @@ button:hover {
 
 /* SEARCH BAR */
 .container {
-  text-align: center; 
+  text-align: center;
 }
 
-.searchContainer{
+.searchContainer {
   width: 90%;
-  margin:auto;
+  margin: auto;
   background-color: #30aac9;
   border-top-left-radius: 20px;
   border-top-right-radius: 20px;
   padding-top: 20px;
-  
 }
 
-input[type=text] {
+.searchBox {
   padding: 10px;
   border: none;
   font-size: 17px;
@@ -150,6 +167,8 @@ figcaption {
 }
 
 figure img {
+  width: 400px;
+  height: 350px;
   border: 1px solid transparent;
   border-radius: 40px;
   opacity: 1;
@@ -175,10 +194,58 @@ figure img {
   padding: 16px 32px;
 }
 
-
 /* FOOTER */
-footer{
+footer {
   text-align: center;
   padding: 50px;
   text-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}
+
+/* FORM TO ADD RESTAURANT */
+.addRestaurantForm .fa-times {
+  position: absolute;
+  right: 0;
+  margin-right: 10px;
+}
+.addRestaurantForm{
+  display: none;
+}
+.addRestaurantForm {
+  
+  flex-direction: column;
+  font-size: 25px;
+  align-items: center;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 200px;
+  width: 350px;
+  border: 2px solid;
+  background-color: white;
+  z-index: 1;
+  padding-bottom: 20px;
+}
+
+#addRestaurantBtn {
+  padding: 10px;
+  width: 300px;
+  font-size: 17px;
+  border: 2px solid;
+  border-radius: 20px;
+  background-color: #8ee8ff;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}
+.inputNewRestaurant{
+  padding: 10px;
+  width: 300px;
+  font-size: 17px;
+  border: 2px solid;
+  border-radius: 20px;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}
+.addRestaurant label {
+  margin-top: 25px;
 }

@@ -1,26 +1,11 @@
-function createInput() {
-  const inputName = document.createElement("input");
-  input.type = "text";
-  input.name = "menuName";
-//   const inputPrice = document.createElement("input");
-//   input.type = "text";
-//   input.name = "menuName";
-  return inputName;
-}
+const addMenuBtn = document.getElementById('addMenuBtn')
+const menuListElement = document.querySelector('.menuItems')
+const menuItemElement = document.createElement("li")
 
-const menuItemForm = document.getElementById("menuItemsContainer");
-document.getElementById("addMenuItem").addEventListener("click", function () {
-    const inputName = document.createElement("input");
-    const inputPrice = document.createElement("input");
-    const space = document.createElement("br");
-    inputName.type = "text";
-    inputPrice.type = "text";
-    menuItemForm.appendChild(inputName);
-    menuItemForm.appendChild(inputPrice);
-    menuItemForm.appendChild(space);
-  console.log("hellpo");
-});
 
-//console.log(document.querySelector('addMenuItem'))
+
+// Gets Restaurant Titles Name
+console.log(document.getElementById('menuTitles').value)
+
 
 // HOW TO ADD MENU ITEM TO SPECIFIC MENU ????

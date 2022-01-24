@@ -2,11 +2,10 @@
 <body>
     <header>
       <nav>
-        <h1>RestoDirect</h1>
+        <h1>Restaurants</h1>
        <a href="#">CONTACT</a>
       </nav>
     </header>
-
         {{#each restaurants}}
     <section>
         <a href="/restaurants"><i class="fas fa-2x fa-arrow-left"></i></a>
@@ -14,8 +13,8 @@
     </section>
     
     <section class="editForm">
-        <section class="forms hidden">
         <i class="fas fa-2x fa-times"></i>
+        <section class="forms hidden">
         <i class="fas fa-2x fa-arrow-left" id="exitForm"></i>
         <form class="restaurantDetails hidden">
                 <label for="name">Restaurant Name</label>
@@ -32,7 +31,7 @@
                 <input type="text" name="menuName" id="menuName" value="{{this.title}}">
                 <br>
             {{/each}}
-            <button><i class="fas fa-plus-circle"></i></button>
+        
          <input type="submit" value="Submit Details">
         </form> 
 
@@ -49,17 +48,39 @@
             {{/each}}
             </div>
             
-            <button type="button"><i class="fas fa-plus-circle" id="addMenuItem"></i></button>
+            
          <input type="submit" value="Submit Details">
          
         </form> 
 
+        <form class="addMenuItemForm hidden">
+            <div>
+                <label for="menuTitles">Select Menu</label>
+                <select name="menuTitles" id="menuTitles">
+                {{#each menus}}
+                    <option value="{{this.title}}">{{this.title}}</option>
+                {{/each}}
+                </select>
+            </div>
+            <div>
+            <label for="menuItem">Menu Item + Price</label>
+                <input type="text" name="menuName" id="menuName" placeholder="Enter Name..." >
+                <input type="text" name="menuName" id="menuName" placeholder="Enter Price...">
+
+            </div>
+            <input type="button" value="Add Item">
+         </form>
+
         </section>
 
         <div class="editBtns">
+        <button id="addMenuItemBtn">Add Menu Items</button>
+        <br>
+        <span style="text-align: center;">------------OR-----------</span>
+        <br>
         <button id="editDetails">Edit Restaurant Details</button>
-        <button id="editMenus">Edit Restaurant Menus</button>
-        <button id="editMenuItems">Edit Restaurant Items</button>
+        <button id="editMenus">Edit Menus</button>
+        <button id="editMenuItems">Edit Menu Items</button>
         </div>
        
 

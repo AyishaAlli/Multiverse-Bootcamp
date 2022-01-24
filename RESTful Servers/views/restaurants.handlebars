@@ -2,7 +2,7 @@
   <body>
     <header>
       <nav>
-        <h1>RestoDirect</h1>
+        <h1>Restaurants</h1>
        <a href="#">CONTACT</a>
       </nav>
     </header>
@@ -10,12 +10,26 @@
     <main>
       <section class="userOptions">
         <button><i class="fas fa-1x fa-plus-square"></i>ADD RESTAURANT</button>
-        <button><i class="fas fa-1x fa-minus-square"></i>REMOVE RESTAURANT</button>
+        {{!-- <button><i class="fas fa-1x fa-minus-square"></i>REMOVE RESTAURANT</button> --}}
       </section>
+      <form class="addRestaurantForm" action="">
+        <i class="fas fa-2x fa-times"></i>
+        
+          <label for="restaurantName">Name</label>
+        <input type="text" class="inputNewRestaurant" name="restaurantName">
+  
+        <label for="restaurantImage">Image</label>
+        <input type="text" class="inputNewRestaurant" name="restaurantImage">
+        <br>
+        <button type="submit" id="addRestaurantBtn">Submit</button>
+        
+        
+    </form>
+      
       <div class="container">
         <div class="search">
           <form action="" class="searchContainer">
-            <input type="text" placeholder="Search.." />
+            <input type="text" class="searchBox" placeholder="Search.." />
             <button type="submit"><i class="fa fa-search"></i></button>
           </form>
         </div>
@@ -47,5 +61,6 @@
       <a href="https://github.com/AyishaAlli" target="_blank"></a>
       Ayisha Alli.
     </footer>
+       <script src="js/restaurants.js"></script> 
 
   </body>

@@ -149,6 +149,11 @@ input[type="submit"] {
   margin-top: 10px;
   background-color: #8ee8ff;
 }
+input[type="select"] {
+  width: 200px;
+  margin-top: 10px;
+  background-color: #8ee8ff;
+}
 .editForm {
   position: absolute;
   left: 0;

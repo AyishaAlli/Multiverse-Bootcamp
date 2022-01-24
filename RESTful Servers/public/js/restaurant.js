@@ -8,6 +8,10 @@ const form = document.querySelector(".editForm");
 const editBtns = document.querySelector(".editBtns");
 const exitForm = document.getElementById("exitForm");
 
+// ADD BBUTTONS
+const addMenuItemBtn = document.getElementById("addMenuItemBtn");
+const addMenuItemForm = document.querySelector(".addMenuItemForm");
+
 //  EDIT FORM BUTTOMS
 const editRestaurantDetails = document.getElementById("editDetails");
 const editMenus = document.getElementById("editMenus");
@@ -18,6 +22,13 @@ const allForms = document.querySelector(".forms");
 const restaurantDetailsForm = document.querySelector(".restaurantDetails");
 const menusForm = document.querySelector(".restaurantMenus");
 const menuItemsForm = document.querySelector(".restaurantMenuItems");
+
+//Selecting the Add Menu Item Button
+addMenuItemBtn.addEventListener("click", function () {
+  editBtns.style.display = "none"; // gets rid off edit buttons
+  allForms.classList.remove("hidden"); // makes form container appear
+  addMenuItemForm.classList.remove('hidden')
+});
 
 // Selecting the right Form that you want to edit
 editRestaurantDetails.addEventListener("click", function () {
@@ -30,7 +41,6 @@ editMenus.addEventListener("click", function () {
   editBtns.style.display = "none"; // gets rid off edit buttons
   allForms.classList.remove("hidden"); // makes form container appear
   menusForm.classList.remove("hidden"); //  // makes restaurant form appear
- 
 });
 
 editMenuItems.addEventListener("click", function () {
@@ -44,26 +54,8 @@ exitForm.addEventListener("click", function () {
   allForms.classList.add("hidden"); // hides forms
   restaurantDetailsForm.classList.add("hidden"); //hides restaurant details form
   menusForm.classList.add("hidden");
-  // menuItemsForm.classList.add('hidden')
+  addMenuItemForm.classList.add('hidden')
 });
-
-//doesnt work
-// menu.addEventListener("click", () => {
-//   for (i = 0; i < menuItems.length; i++) {
-//     if (menuItems[i].id === "1") {
-//       menuItems[i].classList.toggle("hidden");
-//     }
-
-//     //console.log(menuItems[i].id);
-//   }
-// });
-
-// menu.addEventListener("click", () => {
-
-//     //test.classList.toggle("hidden");
-//     console.log(test);
-
-// });
 
 openModal.addEventListener("click", () => {
   console.log("hi");
@@ -77,5 +69,3 @@ closeModal.addEventListener("click", () => {
   form.style.display = "none";
 });
 
-
-// CLOSE BTN NEEDS TO BE SHOWING ON EDIT FORM BUTTONS SCREEN
