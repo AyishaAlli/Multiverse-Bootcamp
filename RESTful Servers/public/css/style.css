@@ -94,7 +94,8 @@ header h1 {
 .userOptions button i {
   margin-left: 10px;
 }
-button:hover {
+
+#openForm:hover {
   color: white;
 }
 
@@ -235,7 +236,7 @@ footer {
   font-size: 17px;
   border: 2px solid;
   border-radius: 20px;
-  background-color: #8ee8ff;
+  background-color: #30aac9;
   box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
 }
 .inputNewRestaurant{
@@ -246,6 +247,9 @@ footer {
   border-radius: 20px;
   box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
 }
-.addRestaurant label {
-  margin-top: 25px;
+.addRestaurantForm label {
+  margin-top: 50px;
+}
+#addRestaurantBtn:hover{
+background-color: #8ee8ff;
 }

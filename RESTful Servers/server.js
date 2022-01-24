@@ -34,6 +34,7 @@ app.use(express.static("public")); // Gets code from folder called public. Thing
 //All Restaurants - Homepage
 app.get("/restaurants", async (req, res) => {
   const restaurants = await Restaurant.findAll();
+  
   res.render("restaurants", {
     restaurants,
     style: "style.css",
@@ -67,6 +68,8 @@ app.get("/restaurants/:id", async (req, res) => {
     title: "Restaurant",
   });
 });
+
+
 //EXAMPLE : searching all restaurants -  As JSON file (Before handlebars)
 // app.get("/restaurants", async (req, res) => {
 //   const restaurants = await Restaurant.findAll();

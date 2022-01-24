@@ -9,11 +9,11 @@
 
     <main>
       <section class="userOptions">
-        <button><i class="fas fa-1x fa-plus-square"></i>ADD RESTAURANT</button>
+        <button id="openForm"><i class="fas fa-1x fa-plus-square"></i>ADD RESTAURANT</button>
         {{!-- <button><i class="fas fa-1x fa-minus-square"></i>REMOVE RESTAURANT</button> --}}
       </section>
-      <form class="addRestaurantForm" action="">
-        <i class="fas fa-2x fa-times"></i>
+      <form class="addRestaurantForm" action="/restaurants" method="post">
+              <i id="closeForm" class="fas fa-2x fa-times"></i>
         
           <label for="restaurantName">Name</label>
         <input type="text" class="inputNewRestaurant" name="restaurantName">
@@ -23,8 +23,11 @@
         <br>
         <button type="submit" id="addRestaurantBtn">Submit</button>
         
+      </form>
+    
+
         
-    </form>
+
       
       <div class="container">
         <div class="search">
@@ -46,7 +49,7 @@
                   </div>
                 </div>
                 <figcaption>
-                  <a href="#"> {{this.name}} </a>
+                  <a href="#" id="{{this.id}}"> {{this.name}} </a>
                 </figcaption>
               </figure>
           </div>

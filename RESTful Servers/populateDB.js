@@ -1,6 +1,6 @@
-const {Restaurant} = require('./restaurant')
-const {Menu} = require('./menu')
-const {MenuItem} = require('./menu_item')
+const {Restaurant} = require('./Restaurant')
+const {Menu} = require('./Menu')
+const {MenuItem} = require('./MenuItem')
 const fsp = require('fs').promises; // Node.js file system module with promises
 const {sequelize} = require('./sequelize_index');
 
