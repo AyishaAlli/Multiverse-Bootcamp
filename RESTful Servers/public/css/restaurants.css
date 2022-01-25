@@ -102,7 +102,8 @@ header h1 {
   color: white;
 }
 
-/* SEARCH BAR */
+/*SEARCH BAR - Removed styling till i can get it to work */
+/* 
 .container {
   text-align: center;
 }
@@ -130,7 +131,7 @@ header h1 {
   border: none;
   cursor: pointer;
   margin-right: 20px;
-}
+} */
 
 /* RESTAURANT CARDS */
 
@@ -143,8 +144,9 @@ header h1 {
   margin: auto;
   background-color: #30aac9;
   border: 0px solid transparent;
-  border-bottom-left-radius: 20px;
-  border-bottom-right-radius: 20px;
+  border-radius: 20px; /*remove if i get search bar to work*/
+  /* border-bottom-left-radius: 20px;
+  border-bottom-right-radius: 20px;  not needed unless search bar is there*/
   padding-bottom: 30px;
 }
 

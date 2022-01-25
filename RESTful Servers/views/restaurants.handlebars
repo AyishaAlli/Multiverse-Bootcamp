@@ -32,10 +32,10 @@
       
       <div class="container">
         <div class="search">
-          <form action="" class="searchContainer">
-            <input type="text" class="searchBox" placeholder="Search.." />
-            <button type="submit"><i class="fa fa-search"></i></button>
-          </form>
+          {{!-- <form action="" class="searchContainer">
+            <input  type="text" class="searchBox" placeholder="Search.." />
+            <button><i class="fa fa-search"></i></button>
+          </form> --}}
         </div>
         <div class="restContainer">
             {{#each restaurants}}
@@ -50,7 +50,7 @@
                   </div>
                 </div>
                 <figcaption>
-                  <a href="#" id="{{this.id}}"> {{this.name}} </a>
+                  <a href="#" id="{{this.id}}" class="restaurantName"> {{this.name}} </a>
                 </figcaption>
               </figure>
           </div>
