@@ -29,12 +29,14 @@ app.set("view engine", "handlebars");
 
 app.use(express.static("public")); // Gets code from folder called public. Things like js and cc files will go in here
 
+
+
+
 //ENDPOINTS WITH HANDLEBARS RENDERING DATA AND FEEDING TO VIEWS FOLDER
 
-//All Restaurants - Homepage
+//All Restaurants ( Name and images) - Homepage
 app.get("/restaurants", async (req, res) => {
   const restaurants = await Restaurant.findAll();
-  
   res.render("restaurants", {
     restaurants,
     style: "style.css",
@@ -42,32 +44,33 @@ app.get("/restaurants", async (req, res) => {
   });
 });
 
-// Restaurants + menus + menu items
+
+// Shows each restaurant with its menus and menu items 
 app.get("/restaurants/:id", async (req, res) => {
-  const restaurants = await Restaurant.findAll({
-    include: [
-      {
-        model: Menu,
-        as: "menus",
-        where: {
-          restaurant_id: req.params.id,
-        },
+  const restaurant = await Restaurant.findByPk(req.params.id, {
         include: [
           {
-            model: MenuItem,
-            as: "menuItems",
-            required: true,
+            model: Menu,
+            as: "menus",
+            include: [
+              {
+                model: MenuItem,
+                as: "menuItems",
+                required: true,
+              },
+            ],
           },
         ],
-      },
-    ],
-  });
+      });
   res.render("restaurant", {
-    restaurants,
-    style: "restaurant.css",
-    title: "Restaurant",
-  });
+        restaurant,
+        style: "restaurant.css",
+        title: "Restaurant",
+      });
 });
+
+
+
 
 
 //EXAMPLE : searching all restaurants -  As JSON file (Before handlebars)
@@ -85,23 +88,24 @@ app.get("/restaurants/:id", async (req, res) => {
 //New endpoint to listen to CREATE a restaurant
 app.post("/restaurants", async (req, res) => {
   const restaurant = await Restaurant.create(req.body);
-  res.sendStatus(201).send(restaurant);
+  //res.status(201).send(restaurant);
+  res.status(201).redirect('/restaurants')
 });
 
 //New endpoint to listen to UPDATE requests
 
-app.put("/restaurants/:id", async (req, res) => {
-  const restaurant = await Restaurant.update(req.body, {
-    where: {
-      id: req.params.id,
-    },
-  });
-  res.render("restaurants", {
-    restaurant,
-    style: "style.css",
-    title: "RestoDirect ",
-  });
-});
+// app.put("/restaurants/:id", async (req, res) => {
+//   const restaurant = await Restaurant.update(req.body, {
+//     where: {
+//       id: req.params.id,
+//     },
+//   });
+//   res.render("restaurants", {
+//     restaurant,
+//     style: "style.css",
+//     title: "RestoDirect ",
+//   });
+// });
 // app.put("/restaurants/:id", async (req, res) => {
 //   const restaurant = await Restaurant.update(req.body, {
 //     where: {
@@ -140,7 +144,7 @@ app.put("/restaurants/:id/menus/:menuid", async (req, res) => {
       id: req.params.menuid,
     },
   });
-  res.sendStatus(201).send(menu);
+  res.status(201).send(menu);
 });
 
 //Menus and Menu Items for specific restaurant

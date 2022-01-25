@@ -168,8 +168,8 @@ figcaption {
 }
 
 figure img {
-  width: 400px;
-  height: 350px;
+  width: 350px !important;
+  height: 250px !important;
   border: 1px solid transparent;
   border-radius: 40px;
   opacity: 1;

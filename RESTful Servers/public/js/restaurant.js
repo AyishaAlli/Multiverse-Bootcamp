@@ -23,42 +23,44 @@ const restaurantDetailsForm = document.querySelector(".restaurantDetails");
 const menusForm = document.querySelector(".restaurantMenus");
 const menuItemsForm = document.querySelector(".restaurantMenuItems");
 
-//Selecting the Add Menu Item Button
-addMenuItemBtn.addEventListener("click", function () {
+function hideEditBtnsAndShowAllForms() {
   editBtns.style.display = "none"; // gets rid off edit buttons
   allForms.classList.remove("hidden"); // makes form container appear
-  addMenuItemForm.classList.remove('hidden')
+}
+
+//Selecting the Add Menu Item Button
+addMenuItemBtn.addEventListener("click", function () {
+  hideEditBtnsAndShowAllForms();
+  addMenuItemForm.classList.remove("hidden");
 });
 
 // Selecting the right Form that you want to edit
 editRestaurantDetails.addEventListener("click", function () {
-  editBtns.style.display = "none"; // gets rid off edit buttons
-  allForms.classList.remove("hidden"); // makes form container appear
+  hideEditBtnsAndShowAllForms();
   restaurantDetailsForm.classList.remove("hidden"); //  // makes restaurant form appear
 });
 
 editMenus.addEventListener("click", function () {
-  editBtns.style.display = "none"; // gets rid off edit buttons
-  allForms.classList.remove("hidden"); // makes form container appear
+  hideEditBtnsAndShowAllForms();
   menusForm.classList.remove("hidden"); //  // makes restaurant form appear
 });
 
 editMenuItems.addEventListener("click", function () {
-  editBtns.style.display = "none"; // gets rid off edit buttons
-  allForms.classList.remove("hidden"); // makes form container appear
+  hideEditBtnsAndShowAllForms();
   menuItemsForm.classList.remove("hidden"); //  // makes restaurant form appear
 });
 
+// exit each form and go back to edit buttons
 exitForm.addEventListener("click", function () {
   editBtns.style.display = "flex"; // bring back edit buttons
   allForms.classList.add("hidden"); // hides forms
   restaurantDetailsForm.classList.add("hidden"); //hides restaurant details form
   menusForm.classList.add("hidden");
-  addMenuItemForm.classList.add('hidden')
+  menuItemsForm.classList.add("hidden");
 });
 
+// Open And Close Modal
 openModal.addEventListener("click", () => {
-  console.log("hi");
   form.style.display = "block";
 });
 
@@ -68,4 +70,3 @@ closeModal.addEventListener("click", () => {
   restaurantDetailsForm.classList.add("hidden");
   form.style.display = "none";
 });
-

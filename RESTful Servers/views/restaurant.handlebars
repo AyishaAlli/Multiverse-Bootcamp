@@ -6,10 +6,9 @@
        <a href="#">CONTACT</a>
       </nav>
     </header>
-        {{#each restaurants}}
     <section>
         <a href="/restaurants"><i class="fas fa-2x fa-arrow-left"></i></a>
-        <h1 class="restName">{{this.name}}<i class="fas fa-pencil-alt"></i></h1>
+        <h1 class="restName">{{restaurant.name}}<i class="fas fa-pencil-alt"></i></h1>
     </section>
     
     <section class="editForm">
@@ -18,15 +17,15 @@
         <i class="fas fa-2x fa-arrow-left" id="exitForm"></i>
         <form class="restaurantDetails hidden">
                 <label for="name">Restaurant Name</label>
-                <input type="text" name="name" id="name" value="{{this.name}}">
+                <input type="text" name="name" id="name" value="{{restaurant.name}}">
                 <br>
                 <label for="imageURL">Image Link (URL)</label>
-                <input type="url" name="imageURL" id="imageURL" value="{{this.image}}">
-         <input type="submit" value="Submit Details">
+                <input type="url" name="imageURL" id="imageURL" value="{{restaurant.image}}">
+         <input onclick="createRestaurant({{restaurant.id}})" type="submit" value="Submit Details">
           </form>
 
         <form class=" restaurantMenus hidden">
-            {{#each menus}}
+            {{#each restaurant.menus}}
                 <label for="menuName">Menu Name</label>
                 <input type="text" name="menuName" id="menuName" value="{{this.title}}">
                 <br>
@@ -37,7 +36,7 @@
 
         <form class=" restaurantMenuItems hidden">
             <div id="menuItemsContainer">
-                {{#each menus}}
+                {{#each restaurant.menus}}
                 <p style="text-decoration: underline; color:#63d1ec">{{this.title}}</p>
             {{#each menuItems}}
                 <label for="menuItem">Menu Item + Price</label>
@@ -57,7 +56,7 @@
             <div>
                 <label for="menuTitles">Select Menu</label>
                 <select name="menuTitles" id="menuTitles">
-                {{#each menus}}
+                {{#each restaurant.menus}}
                     <option value="{{this.title}}">{{this.title}}</option>
                 {{/each}}
                 </select>
@@ -82,7 +81,7 @@
         <button id="editMenus">Edit Menus</button>
         <button id="editMenuItems">Edit Menu Items</button>
 
-        <a href="/restaurants" onclick="deleteRestaurant({{this.id}})">
+        <a href="/restaurants" onclick="deleteRestaurant({{restaurant.id}})">
 <button id="deleteRestaurant">Delete Restaurant</button>
         </a>
 
@@ -92,27 +91,39 @@
         
     </section>
 
-    <div class="container">
+    <div class="container"> 
         <figure>
-            <img src="{{this.image}}" width="570" height="500" alt="">
-            <figcaption>
-            {{#each menus}}
-                <p class="menu">{{this.title}}</p>
-                <ul class="menuItems" id="{{this.id}}">
-                    {{#each menuItems}}
-                    <li>{{this.name}} £{{this.price}}</li>
-               {{/each}}
-                </ul>
-                <br>
-            {{/each}}
-            </figcaption>
+            <img src="{{restaurant.image}}" width="570" height="500" alt="">
+                    <figcaption>
+                        {{#each restaurant.menus}}
+                            <p class="menu">{{this.title}}</p>
+                            <ul class="menuItems" id="{{this.id}}">
+                                {{#each menuItems}}
+                                    <li>{{this.name}} £{{this.price}}</li>
+                                {{/each}}
+                            </ul>
+                            <br>
+                        {{/each}}
+                     </figcaption>
         </figure>
     </div>
     <script src="js/restaurant.js"></script> 
-    <script src="js/restaurantCRUD.js"></script> 
-    {{/each}}
 
+    <script>
 
+        // Delete a restaurant 
+        function deleteRestaurant(restaurantId) {
+    fetch("/restaurants/" + restaurantId, { method: "DELETE" })
+        .then((res) => {
+        res.json();
+        })
+        .catch(function (err) {
+        console.error(err);
+        });
+    }
 
+    </script>
+    
 </body>
 
+{{!-- Removed for each syntax but not working when i put restaurants.name  --}}

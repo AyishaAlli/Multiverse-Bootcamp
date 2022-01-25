@@ -12,18 +12,19 @@
         <button id="openForm"><i class="fas fa-1x fa-plus-square"></i>ADD RESTAURANT</button>
         {{!-- <button><i class="fas fa-1x fa-minus-square"></i>REMOVE RESTAURANT</button> --}}
       </section>
-      <form class="addRestaurantForm" action="/restaurants" method="post">
+    
+      <form action="/restaurants" class="addRestaurantForm" method="post">
               <i id="closeForm" class="fas fa-2x fa-times"></i>
         
-          <label for="restaurantName">Name</label>
-        <input type="text" class="inputNewRestaurant" name="restaurantName">
+          <label for="name">Name</label>
+        <input type="text" class="inputNewRestaurant" name="name" >
   
-        <label for="restaurantImage">Image</label>
-        <input type="text" class="inputNewRestaurant" name="restaurantImage">
+        <label for="image">Image Link(URL)</label>
+        <input type="text" class="inputNewRestaurant" name="image">
         <br>
-        <button type="submit" id="addRestaurantBtn">Submit</button>
-        
+        <button name="submit" type="submit" id="addRestaurantBtn">Submit</button>
       </form>
+        
     
 
         
@@ -41,7 +42,7 @@
           <div class="eachRest">
               <figure>
                 <div class="imgContainer">
-                  <img src="{{this.image}}" width="400" height="400" alt="{{this.name}} restaurant image" />
+                  <img src="{{this.image}}" alt="{{this.name}} restaurant image" />
                   <div class="middle">
                     <div class="text">
                       <a href="/restaurants/{{this.id}}">Full Detail List</a>
