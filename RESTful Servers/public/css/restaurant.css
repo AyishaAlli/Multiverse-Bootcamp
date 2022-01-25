@@ -14,6 +14,10 @@ nav {
   padding: 10px;
   align-items: center;
 }
+nav a {
+  text-decoration: none;
+  color: black;
+}
 nav a:hover {
   color: #30aac9;
   cursor: pointer;
@@ -114,7 +118,7 @@ ul li {
 /* FORM */
  .editForm{
   display: none;
-}   
+}    
 
 .editForm .fa-times {
   position: absolute;
@@ -129,6 +133,7 @@ form {
   font-size: 25px;
   align-items: center;
 }
+
 form div {
   display: flex;
   flex-direction: column;
@@ -136,24 +141,22 @@ form div {
   justify-content: center;
   align-items: center;
 }
-input {
+
+input[type="text"],input[type="url"], input[type="submit"],input[type="number"] {
   padding: 10px;
   width: 300px;
   font-size: 17px;
   border: 2px solid;
   border-radius: 20px;
   box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
-}
+} 
+
 input[type="submit"] {
-  width: 200px;
   margin-top: 10px;
   background-color: #8ee8ff;
+
 }
-input[type="select"] {
-  width: 200px;
-  margin-top: 10px;
-  background-color: #8ee8ff;
-}
+
 .editForm {
   position: absolute;
   left: 0;
@@ -194,8 +197,8 @@ input[type="select"] {
     width: 300px;
   }
   .container img {
-    width: 250px;
-    height: 200px;
+    width: 300px;
+    height: 250px;
   }
   .editForm {
     width: 350px;

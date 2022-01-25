@@ -1,7 +1,10 @@
-const { response } = require("express");
-const express = require("express");
-const { check, validationResult } = require("express-validator");
+// VSC added these
+const { response } = require("express"); 
 const res = require("express/lib/response");
+
+
+const express = require("express"); // express extension
+const { check, validationResult } = require("express-validator"); // express validatoe extension
 
 const app = express(); // Creates Server
 const port = 3000; // Sets port to 3000

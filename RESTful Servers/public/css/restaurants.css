@@ -45,6 +45,9 @@ nav {
   padding: 10px;
   align-items: center;
 }
+nav a{
+  text-decoration: none;
+}
 nav a:hover {
   color: #30aac9;
   cursor: pointer;
@@ -195,12 +198,6 @@ figure img {
   padding: 16px 32px;
 }
 
-/* FOOTER */
-footer {
-  text-align: center;
-  padding: 50px;
-  text-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
-}
 
 /* FORM TO ADD RESTAURANT */
 .addRestaurantForm .fa-times {
@@ -252,4 +249,26 @@ footer {
 }
 #addRestaurantBtn:hover{
 background-color: #8ee8ff;
+}
+
+/* FOOTER */
+footer {
+  text-align: center;
+  padding: 50px;
+  text-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}
+
+/* Mobile */
+@media only screen and (max-width: 500px) {
+  figure img {
+    width: 300px !important;
+    height: 200px !important;
+  }
+  .userOptions{
+    margin: 20px;
+  }
+  #openForm{
+    font-size: 20px;
+    
+    }
 }

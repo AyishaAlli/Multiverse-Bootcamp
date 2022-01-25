@@ -9,7 +9,7 @@ Menu.init(
   {
     sequelize,
     timestamps: false,
-  }
+  }, 
 );
 
 Menu.hasMany(MenuItem, { as: "menuItems", foreignKey: "menu_id" });

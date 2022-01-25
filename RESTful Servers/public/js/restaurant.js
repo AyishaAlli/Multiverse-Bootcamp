@@ -9,30 +9,25 @@ const editBtns = document.querySelector(".editBtns");
 const exitForm = document.getElementById("exitForm");
 
 // ADD BBUTTONS
-const addMenuItemBtn = document.getElementById("addMenuItemBtn");
-const addMenuItemForm = document.querySelector(".addMenuItemForm");
+//const addMenuItemBtn = document.getElementById("addMenuItemBtn");
+//const addMenuItemForm = document.querySelector(".addMenuItemForm");
 
 //  EDIT FORM BUTTOMS
 const editRestaurantDetails = document.getElementById("editDetails");
 const editMenus = document.getElementById("editMenus");
-const editMenuItems = document.getElementById("editMenuItems");
+//const editMenuItems = document.getElementById("editMenuItems");
 
 // FORMS
 const allForms = document.querySelector(".forms");
 const restaurantDetailsForm = document.querySelector(".restaurantDetails");
 const menusForm = document.querySelector(".restaurantMenus");
-const menuItemsForm = document.querySelector(".restaurantMenuItems");
+//const menuItemsForm = document.querySelector(".restaurantMenuItems");
 
 function hideEditBtnsAndShowAllForms() {
   editBtns.style.display = "none"; // gets rid off edit buttons
   allForms.classList.remove("hidden"); // makes form container appear
 }
 
-//Selecting the Add Menu Item Button
-addMenuItemBtn.addEventListener("click", function () {
-  hideEditBtnsAndShowAllForms();
-  addMenuItemForm.classList.remove("hidden");
-});
 
 // Selecting the right Form that you want to edit
 editRestaurantDetails.addEventListener("click", function () {
@@ -45,10 +40,16 @@ editMenus.addEventListener("click", function () {
   menusForm.classList.remove("hidden"); //  // makes restaurant form appear
 });
 
-editMenuItems.addEventListener("click", function () {
-  hideEditBtnsAndShowAllForms();
-  menuItemsForm.classList.remove("hidden"); //  // makes restaurant form appear
-});
+//Selecting the Add Menu Item Button
+// addMenuItemBtn.addEventListener("click", function () {
+//   hideEditBtnsAndShowAllForms();
+//   addMenuItemForm.classList.remove("hidden");
+// });
+
+// editMenuItems.addEventListener("click", function () {
+//   hideEditBtnsAndShowAllForms();
+//   menuItemsForm.classList.remove("hidden"); //  // makes restaurant form appear
+// });
 
 // exit each form and go back to edit buttons
 exitForm.addEventListener("click", function () {
@@ -56,7 +57,8 @@ exitForm.addEventListener("click", function () {
   allForms.classList.add("hidden"); // hides forms
   restaurantDetailsForm.classList.add("hidden"); //hides restaurant details form
   menusForm.classList.add("hidden");
-  menuItemsForm.classList.add("hidden");
+  //menuItemsForm.classList.add("hidden");
+  //addMenuItemForm.classList.add("hidden");
 });
 
 // Open And Close Modal
@@ -70,3 +72,5 @@ closeModal.addEventListener("click", () => {
   restaurantDetailsForm.classList.add("hidden");
   form.style.display = "none";
 });
+
+console.log(menusForm)

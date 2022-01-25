@@ -64,6 +64,10 @@ FROM menus
 INNER JOIN menu_items ON menus.id = menu_items.menus_id
 WHERE restaurants_id = 1;
 
+UPDATE `Restaurants` 
+SET `name`=$1,`image`=$2 
+WHERE `id` = $3
+
 
 --Select all the restaurants with a count of the number of menus each restaraunt has
 SELECT restaurants.name, COUNT(menus.id)

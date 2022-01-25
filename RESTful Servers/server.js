@@ -12,13 +12,16 @@ const Handlebars = require("handlebars"); // Imports handlebars - Needed to allo
 const {
   allowInsecurePrototypeAccess,
 } = require("@handlebars/allow-prototype-access"); // prototype access so i can see my templates. Shouldnt be used in real project
+const methodOverride = require('method-override')
 
 const app = express(); // Creates Server
 const port = 3000; // Sets port to 3000
 
-//Middleware so that Express can read JSON and URL encoded request bodies. Needed for POST and PUT requests
-app.use(express.urlencoded({ extended: true }));
+//Middleware
+app.use(express.urlencoded({ extended: true }));  //Express can read URL encoded request bodies. Needed for POST and PUT requests
 app.use(express.json()); // recognises incomijng requests as a JSON objest
+// override with POST having ?_method=DELETE
+app.use(methodOverride('_method'))
 
 //Middleware for handlebars configuration
 app.engine(
@@ -34,18 +37,17 @@ app.use(express.static("public")); // Gets code from folder called public. Thing
 
 //ENDPOINTS WITH HANDLEBARS RENDERING DATA AND FEEDING TO VIEWS FOLDER
 
-//All Restaurants ( Name and images) - Homepage
+//Show all Restaurants ( Name and images) - Homepage
 app.get("/restaurants", async (req, res) => {
   const restaurants = await Restaurant.findAll();
   res.render("restaurants", {
     restaurants,
-    style: "style.css",
+    style: "restaurants.css",
     title: "RestoDirect ",
   });
 });
 
-
-// Shows each restaurant with its menus and menu items 
+// Show each restaurant with its menus and menu items 
 app.get("/restaurants/:id", async (req, res) => {
   const restaurant = await Restaurant.findByPk(req.params.id, {
         include: [
@@ -69,72 +71,20 @@ app.get("/restaurants/:id", async (req, res) => {
       });
 });
 
-
-
-
-
-//EXAMPLE : searching all restaurants -  As JSON file (Before handlebars)
-// app.get("/restaurants", async (req, res) => {
-//   const restaurants = await Restaurant.findAll();
-//   res.send(restaurants); // returns RAW JSON
-// });
-
-//search each restaurant by ID
-app.get("/restaurants/:id", async (req, res) => {
-  const restaurant = await Restaurant.findByPk(req.params.id);
-  res.send(restaurant);
-});
-
 //New endpoint to listen to CREATE a restaurant
 app.post("/restaurants", async (req, res) => {
   const restaurant = await Restaurant.create(req.body);
-  //res.status(201).send(restaurant);
   res.status(201).redirect('/restaurants')
 });
 
-//New endpoint to listen to UPDATE requests
-
-// app.put("/restaurants/:id", async (req, res) => {
-//   const restaurant = await Restaurant.update(req.body, {
-//     where: {
-//       id: req.params.id,
-//     },
-//   });
-//   res.render("restaurants", {
-//     restaurant,
-//     style: "style.css",
-//     title: "RestoDirect ",
-//   });
-// });
-// app.put("/restaurants/:id", async (req, res) => {
-//   const restaurant = await Restaurant.update(req.body, {
-//     where: {
-//       id: req.params.id,
-//     },
-//   });
-//   res.send(restaurant);
-// });
-
-//New endpoint to listen to DELETE requests
-app.delete("/restaurants/:id", async (req, res) => {
-  const restaurant = await Restaurant.destroy({ where: { id: req.params.id } });
-  res.sendStatus(201).send(restaurant);
-});
-
-//INNER JOINS
-
-// Get specific restaurant and its menus menu
-app.get("/restaurants/:id/menus", async (req, res) => {
-  const restaurants = await Restaurant.findAll({
-    include: [
-      {
-        model: Menu,
-        as: "menus",
-        where: { restaurant_id: req.params.id },
-      },
-    ],
+//New endpoint to listen to UPDATE for restaurant Name and Image requests
+app.put("/restaurants/:id", async (req, res) => {
+  const restaurant = await Restaurant.update(req.body, {
+    where: {
+      id: req.params.id,
+    },
   });
-  res.send(restaurants);
+  res.status(201).redirect(`/restaurants/${req.params.id}`);
 });
 
 // // Update Menu on specific restaurant
@@ -144,8 +94,47 @@ app.put("/restaurants/:id/menus/:menuid", async (req, res) => {
       id: req.params.menuid,
     },
   });
-  res.status(201).send(menu);
+  res.status(201).redirect(`/restaurants/${req.params.id}`)
 });
+
+
+
+//New endpoint to listen to DELETE requests
+app.delete("/restaurants/:id", async (req, res) => {
+  const restaurant = await Restaurant.destroy({ where: { id: req.params.id } });
+  res.status(201).redirect(`/restaurants/${req.params.id}`)
+});
+
+//EXAMPLE : searching all restaurants -  As JSON file (Before handlebars)
+// app.get("/restaurants", async (req, res) => {
+//   const restaurants = await Restaurant.findAll();
+//   res.send(restaurants); // returns RAW JSON
+// });
+
+//search each restaurant by ID
+// app.get("/restaurants/:id", async (req, res) => {
+//   const restaurant = await Restaurant.findByPk(req.params.id);
+//   res.send(restaurant);
+// });
+
+
+
+//INNER JOINS
+
+// Get specific restaurant and its menus menu
+// app.get("/restaurants/:id/menus", async (req, res) => {
+//   const restaurants = await Restaurant.findAll({
+//     include: [
+//       {
+//         model: Menu,
+//         as: "menus",
+//         where: { restaurant_id: req.params.id },
+//       },
+//     ],
+//   });
+//   res.send(restaurants);
+// });
+
 
 //Menus and Menu Items for specific restaurant
 // app.get("/restaurants/:id/menus/menuitems", async (req, res) => {
